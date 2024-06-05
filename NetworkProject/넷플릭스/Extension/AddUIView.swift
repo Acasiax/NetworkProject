@@ -20,8 +20,8 @@ extension UILabel {
 extension UIButton {
     static func createPlayButton() -> UIButton {
         let button = UIButton()
-        button.setTitle(" 재생", for: .normal)
-        button.layer.cornerRadius = 10
+        button.setTitle("재생", for: .normal)
+        button.layer.cornerRadius = 15
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -30,10 +30,10 @@ extension UIButton {
         return button
     }
     
-    static func createLikeButton() -> UIButton {
+    static func createFavoriteButton() -> UIButton {
         let button = UIButton()
         button.setTitle("내가 찜한 리스트", for: .normal)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 15
         button.backgroundColor = .darkGray
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .white
@@ -42,4 +42,22 @@ extension UIButton {
     }
 }
 
+extension UIViewController {
+    func configureUI(title: String) {
+        view.backgroundColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.title = title
+        navigationController?.navigationBar.tintColor = .white
+    }
+}
 
+extension UIImageView {
+    static func createImageView(named imageName: String) -> UIImageView {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 15
+        imageView.image = UIImage(named: imageName)
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        return imageView
+    }
+}
