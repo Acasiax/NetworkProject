@@ -35,7 +35,15 @@ class NetfliexHomeViewController: UIViewController {
     }
     
     private func setupConstraints() {
-   
+        setupConstraints(
+            headerImageView: headerImageView,
+            playButton: playButton,
+            favoriteButton: favoriteButton,
+            trendingLabel: trendingLabel,
+            firstTrendingImageView: firstTrendingImageView,
+            secondTrendingImageView: secondTrendingImageView,
+            thirdTrendingImageView: thirdTrendingImageView
+        )
     }
     
     
