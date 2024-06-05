@@ -16,6 +16,7 @@
 		AA2CFC8E2C10587C00797F03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFC8D2C10587C00797F03 /* SnapKit */; };
 		AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */; };
 		AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC952C105DC400797F03 /* AddUIView.swift */; };
+		AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AA2CFC862C10580B00797F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetfliexHomeViewController.swift; sourceTree = "<group>"; };
 		AA2CFC952C105DC400797F03 /* AddUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUIView.swift; sourceTree = "<group>"; };
+		AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+EXT.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2CFC952C105DC400797F03 /* AddUIView.swift */,
+				AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
