@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="113" y="-2"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="wtx-D8-OZA">
             <objects>
-                <viewController id="ctx-Qm-wTF" customClass="SignUpViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ctx-Qm-wTF" customClass="SignupViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sDe-IZ-lUh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

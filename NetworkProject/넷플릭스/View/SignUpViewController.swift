@@ -25,13 +25,31 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         setupViewHierarchy()
+        applyConstraints()
     }
     
     func setupViewHierarchy() {
-    emailTextField: emailTextField,
-    passwordTextField: passwordTextField,
+           view.addSubview(titleLabel)
+           view.addSubview(emailTextField)
+           view.addSubview(passwordTextField)
+           view.addSubview(nicknameTextField)
+           view.addSubview(locationTextField)
+           view.addSubview(referralCodeTextField)
+           view.addSubview(signUpButton)
+           view.addSubview(moreInfoButton)
+           view.addSubview(toggleSwitch)
+       }
+    
+    func applyConstraints() {
+        view.configureSignUpConstraints(titleLabel: titleLabel,
+                                    emailTextField: emailTextField,
+                                    passwordTextField: passwordTextField,
+                                        usernameTextField: nicknameTextField,
+                                        locationTextField: locationTextField,
+                                        referralCodeTextField: referralCodeTextField,
+                                        signUpButton: signUpButton,
+                                        additionalInfoButton: moreInfoButton,
+                                        infoToggleSwitch: toggleSwitch)
     }
-    
-    
 }
 
