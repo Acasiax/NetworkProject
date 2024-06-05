@@ -20,6 +20,9 @@
 		AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC992C10893300797F03 /* SignUpViewController.swift */; };
 		AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */; };
 		AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */; };
+		AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */; };
+		AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA52C10A2C100797F03 /* APIKey.swift */; };
+		AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFCAA2C10A33700797F03 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,8 @@
 		AA2CFC992C10893300797F03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUIView+Signup.swift"; sourceTree = "<group>"; };
 		AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signup+Constraints.swift"; sourceTree = "<group>"; };
+		AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryHomeViewController.swift; sourceTree = "<group>"; };
+		AA2CFCA52C10A2C100797F03 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2CFC8E2C10587C00797F03 /* SnapKit in Frameworks */,
+				AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AA2CFCA22C109F8500797F03 /* 로또 */,
 				AA2CFC8F2C1058F100797F03 /* 넷플릭스 */,
 				AA2CFC782C10580900797F03 /* AppDelegate.swift */,
 				AA2CFC7A2C10580900797F03 /* SceneDelegate.swift */,
@@ -128,6 +135,16 @@
 			path = "Singup+EXT";
 			sourceTree = "<group>";
 		};
+		AA2CFCA22C109F8500797F03 /* 로또 */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */,
+				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
+			);
+			name = "로또";
+			path = "로또";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +163,7 @@
 			name = NetworkProject;
 			packageProductDependencies = (
 				AA2CFC8D2C10587C00797F03 /* SnapKit */,
+				AA2CFCAA2C10A33700797F03 /* Alamofire */,
 			);
 			productName = NetworkProject;
 			productReference = AA2CFC752C10580900797F03 /* NetworkProject.app */;
@@ -177,6 +195,7 @@
 			mainGroup = AA2CFC6C2C10580900797F03;
 			packageReferences = (
 				AA2CFC8C2C10587C00797F03 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AA2CFCA92C10A33700797F03 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = AA2CFC762C10580900797F03 /* Products */;
 			projectDirPath = "";
@@ -207,9 +226,11 @@
 			files = (
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
+				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
+				AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
@@ -446,6 +467,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		AA2CFCA92C10A33700797F03 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +482,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA2CFC8C2C10587C00797F03 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		AA2CFCAA2C10A33700797F03 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA2CFCA92C10A33700797F03 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
