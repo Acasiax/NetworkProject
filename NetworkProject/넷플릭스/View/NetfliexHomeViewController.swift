@@ -23,7 +23,14 @@ class NetfliexHomeViewController: UIViewController {
         setupViewHierarchy()
         setupConstraints()
         configureUI(title: "홈")
+        playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
+    
+    @objc private func playButtonClicked() {
+           print("버튼 클릭")
+           let signupVC = SignupViewController()
+           navigationController?.pushViewController(signupVC, animated: true)
+       }
     
     private func setupViewHierarchy() {
         view.addSubview(headerLabel)

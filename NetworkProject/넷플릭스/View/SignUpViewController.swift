@@ -15,7 +15,6 @@ class SignupViewController: UIViewController {
     let nicknameTextField = UITextField.createSignupTextField(placeholder: "닉네임")
     let referralCodeTextField = UITextField.createSignupTextField(placeholder: "추천 코드 입력")
     let locationTextField = UITextField.createSignupTextField(placeholder: "위치")
-    
     let signUpButton = UIButton.createSignupButton(title: "회원가입")
     let moreInfoButton = UIButton.createMoreInfoButton(title: "추가 정보 입력")
     
@@ -27,6 +26,7 @@ class SignupViewController: UIViewController {
         setupViewHierarchy()
         applyConstraints()
     }
+    
     
     func setupViewHierarchy() {
            view.addSubview(titleLabel)

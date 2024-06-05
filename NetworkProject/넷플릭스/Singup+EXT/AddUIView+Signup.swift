@@ -11,7 +11,7 @@ extension UILabel {
         let label = UILabel()
         label.text = "YUNFLIX"
         label.textColor = .systemRed
-        label.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
         return label
     }
 }

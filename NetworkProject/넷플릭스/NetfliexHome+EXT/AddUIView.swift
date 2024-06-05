@@ -11,7 +11,7 @@ extension UILabel {
     static func createLabel(withText text: String) -> UILabel {
         let label = UILabel()
         label.text = text
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .white
         return label
     }
@@ -26,7 +26,7 @@ extension UIButton {
         button.setTitleColor(.black, for: .normal)
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
         button.tintColor = .black
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         return button
     }
     
@@ -37,7 +37,7 @@ extension UIButton {
         button.backgroundColor = .darkGray
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .white
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return button
     }
 }

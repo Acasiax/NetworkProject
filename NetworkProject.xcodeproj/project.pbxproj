@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2CFC9D2C108D4200797F03 /* Singup+EXT */,
-				AA2CFC942C105D6100797F03 /* Extension */,
+				AA2CFC942C105D6100797F03 /* NetfliexHome+EXT */,
 				AA2CFC932C105D5900797F03 /* Model */,
 				AA2CFC922C105D5000797F03 /* View */,
 			);
@@ -110,13 +110,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		AA2CFC942C105D6100797F03 /* Extension */ = {
+		AA2CFC942C105D6100797F03 /* NetfliexHome+EXT */ = {
 			isa = PBXGroup;
 			children = (
 				AA2CFC952C105DC400797F03 /* AddUIView.swift */,
 				AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */,
 			);
-			path = Extension;
+			path = "NetfliexHome+EXT";
 			sourceTree = "<group>";
 		};
 		AA2CFC9D2C108D4200797F03 /* Singup+EXT */ = {
