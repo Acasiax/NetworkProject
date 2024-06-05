@@ -66,3 +66,16 @@ extension UIViewController {
         }
     }
 }
+
+extension UITextField {
+    func configureSignupTextField(placeholder: String, isSecure: Bool = false) {
+        self.placeholder = placeholder
+        self.borderStyle = .roundedRect
+        self.isSecureTextEntry = isSecure
+        self.backgroundColor = .gray
+        self.textColor = .white
+        self.font = UIFont.systemFont(ofSize: 15)
+        self.autocapitalizationType = .none
+        self.autocorrectionType = .no
+    }
+}

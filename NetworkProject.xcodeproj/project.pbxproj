@@ -17,6 +17,8 @@
 		AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */; };
 		AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC952C105DC400797F03 /* AddUIView.swift */; };
 		AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */; };
+		AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC992C10893300797F03 /* SignUpViewController.swift */; };
+		AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetfliexHomeViewController.swift; sourceTree = "<group>"; };
 		AA2CFC952C105DC400797F03 /* AddUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUIView.swift; sourceTree = "<group>"; };
 		AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+EXT.swift"; sourceTree = "<group>"; };
+		AA2CFC992C10893300797F03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUIView+Signup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		AA2CFC8F2C1058F100797F03 /* 넷플릭스 */ = {
 			isa = PBXGroup;
 			children = (
+				AA2CFC9D2C108D4200797F03 /* Singup+EXT */,
 				AA2CFC942C105D6100797F03 /* Extension */,
 				AA2CFC932C105D5900797F03 /* Model */,
 				AA2CFC922C105D5000797F03 /* View */,
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */,
+				AA2CFC992C10893300797F03 /* SignUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +115,14 @@
 				AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AA2CFC9D2C108D4200797F03 /* Singup+EXT */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */,
+			);
+			path = "Singup+EXT";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
+				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
+				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
