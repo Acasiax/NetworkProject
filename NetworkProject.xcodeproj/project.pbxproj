@@ -19,6 +19,7 @@
 		AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */; };
 		AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC992C10893300797F03 /* SignUpViewController.swift */; };
 		AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */; };
+		AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		AA2CFC972C10684E00797F03 /* AutoLayout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+EXT.swift"; sourceTree = "<group>"; };
 		AA2CFC992C10893300797F03 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUIView+Signup.swift"; sourceTree = "<group>"; };
+		AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signup+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */,
+				AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */,
 			);
 			path = "Singup+EXT";
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
