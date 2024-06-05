@@ -14,6 +14,8 @@
 		AA2CFC822C10580B00797F03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2CFC812C10580B00797F03 /* Assets.xcassets */; };
 		AA2CFC852C10580B00797F03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2CFC832C10580B00797F03 /* LaunchScreen.storyboard */; };
 		AA2CFC8E2C10587C00797F03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFC8D2C10587C00797F03 /* SnapKit */; };
+		AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */; };
+		AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC952C105DC400797F03 /* AddUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		AA2CFC812C10580B00797F03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA2CFC842C10580B00797F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA2CFC862C10580B00797F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetfliexHomeViewController.swift; sourceTree = "<group>"; };
+		AA2CFC952C105DC400797F03 /* AddUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AA2CFC8F2C1058F100797F03 /* 넷플릭스 */,
 				AA2CFC782C10580900797F03 /* AppDelegate.swift */,
 				AA2CFC7A2C10580900797F03 /* SceneDelegate.swift */,
 				AA2CFC7C2C10580900797F03 /* ViewController.swift */,
@@ -67,6 +72,40 @@
 				AA2CFC862C10580B00797F03 /* Info.plist */,
 			);
 			path = NetworkProject;
+			sourceTree = "<group>";
+		};
+		AA2CFC8F2C1058F100797F03 /* 넷플릭스 */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFC942C105D6100797F03 /* Extension */,
+				AA2CFC932C105D5900797F03 /* Model */,
+				AA2CFC922C105D5000797F03 /* View */,
+			);
+			name = "넷플릭스";
+			path = "넷플릭스";
+			sourceTree = "<group>";
+		};
+		AA2CFC922C105D5000797F03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFC902C10593400797F03 /* NetfliexHomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA2CFC932C105D5900797F03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA2CFC942C105D6100797F03 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFC952C105DC400797F03 /* AddUIView.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
+				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AA2CFC7B2C10580900797F03 /* SceneDelegate.swift in Sources */,
 			);
