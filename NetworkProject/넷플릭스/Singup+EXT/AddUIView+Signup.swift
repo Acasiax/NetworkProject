@@ -35,7 +35,13 @@ extension UITextField {
 extension UIButton {
     static func createSignupButton(title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .white) -> UIButton {
         let button = UIButton()
-      
+        let attributedTitle = NSAttributedString(string: title, attributes: [
+            NSAttributedString.Key.foregroundColor: titleColor,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold)
+        ])
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.layer.cornerRadius = 8
         return button
     }
     
