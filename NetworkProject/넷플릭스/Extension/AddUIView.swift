@@ -21,7 +21,7 @@ extension UIButton {
     static func createPlayButton() -> UIButton {
         let button = UIButton()
         button.setTitle("재생", for: .normal)
-        button.layer.cornerRadius = 15
+        button.layer.cornerRadius = 7
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -33,7 +33,7 @@ extension UIButton {
     static func createFavoriteButton() -> UIButton {
         let button = UIButton()
         button.setTitle("내가 찜한 리스트", for: .normal)
-        button.layer.cornerRadius = 15
+        button.layer.cornerRadius = 7
         button.backgroundColor = .darkGray
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .white

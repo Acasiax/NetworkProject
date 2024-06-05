@@ -25,15 +25,17 @@ extension UIViewController {
         }
         
         playButton.snp.makeConstraints {
-            $0.leading.equalTo(headerImageView.snp.leading).offset(16)
+            $0.leading.equalTo(headerImageView.snp.leading).offset(35)
             $0.bottom.equalTo(headerImageView.snp.bottom).offset(-16)
             $0.height.equalTo(40)
+            $0.width.equalTo(160)
         }
         
         favoriteButton.snp.makeConstraints {
-            $0.trailing.equalTo(headerImageView.snp.trailing).offset(-16)
+            $0.trailing.equalTo(headerImageView.snp.trailing).offset(-35)
             $0.bottom.equalTo(headerImageView.snp.bottom).offset(-16)
             $0.height.equalTo(40)
+            $0.width.equalTo(160)
         }
         
         trendingLabel.snp.makeConstraints {
