@@ -9,10 +9,18 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
-    func setupConstraints(headerImageView: UIImageView, playButton: UIButton, favoriteButton: UIButton, trendingLabel: UILabel, firstTrendingImageView: UIImageView, secondTrendingImageView: UIImageView, thirdTrendingImageView: UIImageView) {
+    func setupConstraints(headerLabel: UILabel ,headerImageView: UIImageView, playButton: UIButton, favoriteButton: UIButton, trendingLabel: UILabel, firstTrendingImageView: UIImageView, secondTrendingImageView: UIImageView, thirdTrendingImageView: UIImageView) {
+        
+        
+        headerLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(8)
+            $0.centerX.equalTo(view)
+        }
+        
+        
         headerImageView.snp.makeConstraints {
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(headerLabel.snp.bottom).offset(8)
             $0.height.equalTo(view.snp.height).multipliedBy(0.5)
         }
         

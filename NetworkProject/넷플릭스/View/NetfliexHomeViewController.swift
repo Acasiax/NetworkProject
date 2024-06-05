@@ -10,6 +10,7 @@ import SnapKit
 
 class NetfliexHomeViewController: UIViewController {
     
+    let headerLabel = UILabel.createLabel(withText: "이윤지님")
     let headerImageView = UIImageView.createImageView(named: "노량")
     let playButton = UIButton.createPlayButton()
     let favoriteButton = UIButton.createFavoriteButton()
@@ -25,6 +26,7 @@ class NetfliexHomeViewController: UIViewController {
     }
     
     private func setupViewHierarchy() {
+        view.addSubview(headerLabel)
         view.addSubview(headerImageView)
         view.addSubview(playButton)
         view.addSubview(favoriteButton)
@@ -36,7 +38,7 @@ class NetfliexHomeViewController: UIViewController {
     
     private func setupConstraints() {
         setupConstraints(
-            headerImageView: headerImageView,
+            headerLabel: headerLabel, headerImageView: headerImageView,
             playButton: playButton,
             favoriteButton: favoriteButton,
             trendingLabel: trendingLabel,

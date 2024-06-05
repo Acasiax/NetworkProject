@@ -44,7 +44,7 @@ extension UIButton {
 
 extension UIViewController {
     func configureUI(title: String) {
-        view.backgroundColor = .black
+        view.backgroundColor = .darkGray
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.title = title
         navigationController?.navigationBar.tintColor = .white
