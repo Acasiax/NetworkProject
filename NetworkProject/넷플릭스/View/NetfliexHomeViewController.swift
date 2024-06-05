@@ -32,7 +32,7 @@ class NetfliexHomeViewController: UIViewController {
         
         setupViewHierarchy()
         setupConstraints()
-        configureUI(title: "홈")
+        configureUI(title: "재생 버튼")
         playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
     
