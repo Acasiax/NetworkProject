@@ -56,3 +56,11 @@ extension UIButton {
     }
 }
 
+extension UISwitch {
+    static func createSignupSwitch() -> UISwitch {
+        let toggleSwitch = UISwitch()
+        toggleSwitch.onTintColor = .systemRed
+        toggleSwitch.isOn = true
+        return toggleSwitch
+    }
+}
