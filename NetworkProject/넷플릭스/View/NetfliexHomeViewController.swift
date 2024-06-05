@@ -20,6 +20,16 @@ class NetfliexHomeViewController: UIViewController {
     let thirdTrendingImageView = UIImageView.createImageView(named: "육사오")
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 네비게이션 컨트롤러로 감싸기🌟
+              if navigationController == nil {
+                  let navController = UINavigationController(rootViewController: self)
+                  if let window = UIApplication.shared.windows.first {
+                      window.rootViewController = navController
+                      window.makeKeyAndVisible()
+                  }
+              }
+        
         setupViewHierarchy()
         setupConstraints()
         configureUI(title: "홈")
