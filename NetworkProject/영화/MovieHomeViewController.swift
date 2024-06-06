@@ -57,7 +57,7 @@ class MovieHomeViewController: UIViewController {
                     BoxOfficeModel(
                         rank: receive.rank,
                         title: receive.movieNm,
-                        pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt
+                        pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt, movieCd: receive.movieCd
                     )
                 }
                 
@@ -109,11 +109,11 @@ extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
            let movie = dayBoxOffice[indexPath.row]
-           cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
+           cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title) \(movie.movieCd)"
            cell.detailTextLabel?.text = movie.pubDate
            cell.backgroundColor = .clear
-           cell.textLabel?.textColor = .black
-           cell.detailTextLabel?.textColor = .black
+           cell.textLabel?.textColor = .white
+           cell.detailTextLabel?.textColor = .white
            return cell
        }
    }

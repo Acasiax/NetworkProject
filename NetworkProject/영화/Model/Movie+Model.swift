@@ -12,6 +12,7 @@ struct BoxOfficeModel {
     let rank: String
     let title: String
     let pubDate: String
+    let movieCd: String
 }
 
 struct BoxOfficeResponse: Codable {
@@ -26,6 +27,7 @@ struct DailyBoxOffice: Codable {
     let rank: String
     let movieNm: String
     let openDt: String
+    let movieCd: String
 }
 
 

@@ -18,6 +18,11 @@ extension UIViewController {
         self.view.addSubview(backgroundImageView)
         self.view.sendSubviewToBack(backgroundImageView) //서브뷰 게층순서 뒤로 보내기
         
+        // 불투명한 검정색 배경 추가
+        let blackOverlayView = UIView(frame: self.view.bounds)
+        blackOverlayView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        self.view.addSubview(blackOverlayView)
+        
         view.addSubviews(searchField, searchButton, tableView)
         
         searchField.snp.makeConstraints { make in
