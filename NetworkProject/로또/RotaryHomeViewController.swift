@@ -28,7 +28,7 @@ class RotaryHomeViewController: UIViewController {
     
     let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
     let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)
-    let dateLabel: UILabel = .createCustomLabel(text: "날짜", textAlignment: .right, numberOfLines: 1)
+    let dateLabel: UILabel = .createCustomLabel(text: "추첨 날짜", textAlignment: .right, numberOfLines: 1)
     let separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -55,12 +55,14 @@ class RotaryHomeViewController: UIViewController {
                 switch response.result {
                 case .success(let lotto):
                     if lotto.returnValue == "success" {
+                        //   \(lotto.drwNoDate) 추첨결과
+//                        당첨 번호: \(lotto.drwtNo1), \(lotto.drwtNo2), \(lotto.drwtNo3), \(lotto.drwtNo4), \(lotto.drwtNo5), \(lotto.drwtNo6)
                         self.resultLabel.text = """
-                        \(lotto.drwNoDate) 추첨결과
-                        당첨 번호: \(lotto.drwtNo1), \(lotto.drwtNo2), \(lotto.drwtNo3), \(lotto.drwtNo4), \(lotto.drwtNo5), \(lotto.drwtNo6)
+                        
                         보너스 번호: \(lotto.bnusNo)
                         """
                         //🔥🔧 삽질
+                        self.dateLabel.text = "\(lotto.drwNoDate) 추첨"
                         self.updateLottoNumbers(lotto: lotto)
                     } else {
                         self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
@@ -73,12 +75,16 @@ class RotaryHomeViewController: UIViewController {
       }
     
     func setupUI() {
-          view.addSubview(numberTextField)
-          view.addSubview(checkButton)
-          view.addSubview(resultLabel)
-          
-          numberTextField.snp.makeConstraints { make in
-              make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+        view.addSubview(numberTextField)
+        view.addSubview(checkButton)
+        view.addSubview(resultLabel)
+        view.addSubview(infoLabel)
+        view.addSubview(dateLabel)
+        view.addSubview(separatorView)
+        
+        
+        numberTextField.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
               make.centerX.equalToSuperview()
               make.width.equalTo(200)
               make.height.equalTo(40)
@@ -94,9 +100,26 @@ class RotaryHomeViewController: UIViewController {
               make.left.equalToSuperview().offset(20)
               make.right.equalToSuperview().offset(-20)
           }
+        
+        infoLabel.snp.makeConstraints { make in
+            make.top.equalTo(checkButton.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(20)
+        }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(checkButton.snp.bottom).offset(20)
+            make.right.equalToSuperview().offset(-20)
+        }
+        
+        separatorView.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(1)
+        }
+        
         setupNumberCircles()
-
-      }
+        
+    }
     
     
     func createCircleView() -> UIView {
@@ -124,7 +147,7 @@ class RotaryHomeViewController: UIViewController {
          
          for (index, circle) in numberCircles.enumerated() {
              circle.snp.makeConstraints { make in
-                 make.top.equalTo(resultLabel.snp.bottom).offset(20)
+                 make.top.equalTo(resultLabel.snp.bottom).offset(70)
                  make.width.height.equalTo(42)
                  if index == 0 {
                      make.left.equalToSuperview().offset(20)

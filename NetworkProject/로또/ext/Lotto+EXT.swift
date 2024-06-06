@@ -33,6 +33,7 @@ extension UILabel {
         label.numberOfLines = numberOfLines
         label.textAlignment = textAlignment
         label.text = text
+        label.font = .systemFont(ofSize: 15, weight: .light)
         return label
     }
 }
