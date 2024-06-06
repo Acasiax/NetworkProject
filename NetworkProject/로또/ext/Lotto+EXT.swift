@@ -17,3 +17,12 @@ extension UITextField {
         return textField
     }
 }
+
+extension UIButton {
+    static func createCustomButton(title: String, target: Any?, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        return button
+    }
+}
