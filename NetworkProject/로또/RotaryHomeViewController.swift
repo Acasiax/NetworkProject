@@ -22,10 +22,32 @@ class RotaryHomeViewController: UIViewController {
          let bnusNo: Int
          let returnValue: String
      }
-    
+    let numberTextField: UITextField = {
+            let textField = UITextField()
+            textField.borderStyle = .roundedRect
+            textField.placeholder = "회차 번호 입력"
+            textField.textAlignment = .center
+            textField.keyboardType = .numberPad
+            return textField
+        }()
+        
+        let checkButton: UIButton = {
+            let button = UIButton(type: .system)
+            button.setTitle("확인", for: .normal)
+            button.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
+            return button
+        }()
+        
+        let resultLabel: UILabel = {
+            let label = UILabel()
+            label.numberOfLines = 0
+            label.textAlignment = .center
+            return label
+        }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .white
+                setupUI()
        
     }
     
