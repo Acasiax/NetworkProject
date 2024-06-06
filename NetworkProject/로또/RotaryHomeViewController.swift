@@ -26,12 +26,9 @@ class RotaryHomeViewController: UIViewController {
         
     let checkButton: UIButton = .createCustomButton(title: "확인", target: self, action: #selector(checkButtonClicked))
         
-        let resultLabel: UILabel = {
-            let label = UILabel()
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            return label
-        }()
+    let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -62,10 +59,8 @@ class RotaryHomeViewController: UIViewController {
                     print(error)
                     self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
                 }
-            }
-        
+            }   
       }
-    
     
     func setupUI() {
           view.addSubview(numberTextField)
