@@ -28,6 +28,7 @@
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
 		AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209722C119AC5006310B7 /* Movie+Model.swift */; };
+		AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209742C11A132006310B7 /* Movie+Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
 		AAE209722C119AC5006310B7 /* Movie+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Model.swift"; sourceTree = "<group>"; };
+		AAE209742C11A132006310B7 /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE209722C119AC5006310B7 /* Movie+Model.swift */,
+				AAE209742C11A132006310B7 /* Movie+Constraints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
+				AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */,

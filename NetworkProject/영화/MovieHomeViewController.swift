@@ -10,6 +10,11 @@ import UIKit
 class MovieHomeViewController: UIViewController {
 
     var dayBoxOffice: [MoviedataModel] = []
+    let searchField: UITextField = .makeSearchField()
+    let searchButton: UIButton = .makeSearchButton(target: self, action: #selector(searchButtonClicked))
+    let dateFormatter: DateFormatter = .defaultFormatter()
+    let tableView: UITableView = UITableView()
+    let selectedView: UIView = .makeSelectedView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +22,8 @@ class MovieHomeViewController: UIViewController {
 
      
     }
-
+    @objc func searchButtonClicked() {
+    }
 }
 
 
@@ -32,8 +38,8 @@ extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
         cell.detailTextLabel?.text = movie.publicDate
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .green
-        cell.detailTextLabel?.textColor = .green
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
         return cell
     }
     
