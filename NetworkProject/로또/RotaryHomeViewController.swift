@@ -29,6 +29,8 @@ class RotaryHomeViewController: UIViewController {
     let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
         
     
+    var numberCircles: [UIView] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -59,7 +61,7 @@ class RotaryHomeViewController: UIViewController {
                     print(error)
                     self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
                 }
-            }   
+            }
       }
     
     func setupUI() {
@@ -84,8 +86,47 @@ class RotaryHomeViewController: UIViewController {
               make.left.equalToSuperview().offset(20)
               make.right.equalToSuperview().offset(-20)
           }
+        setupNumberCircles()
+
       }
     
     
+    func createCircleView() -> UIView {
+           let circleView = UIView()
+           circleView.layer.cornerRadius = 21
+           circleView.backgroundColor = .lightGray
+           
+           let numberLabel = UILabel()
+           numberLabel.textAlignment = .center
+           numberLabel.textColor = .white
+           circleView.addSubview(numberLabel)
+           numberLabel.snp.makeConstraints { make in
+               make.edges.equalToSuperview()
+           }
+           
+           return circleView
+       }
+    func setupNumberCircles() {
+         for _ in 0..<7 {
+             let circleView = createCircleView()
+             numberCircles.append(circleView)
+             view.addSubview(circleView)
+         }
+         
+         for (index, circle) in numberCircles.enumerated() {
+             circle.snp.makeConstraints { make in
+                 make.top.equalTo(resultLabel.snp.bottom).offset(20)
+                 make.width.height.equalTo(42)
+                 if index == 0 {
+                     make.left.equalToSuperview().offset(20)
+                 } else {
+                     make.left.equalTo(numberCircles[index - 1].snp.right).offset(10)
+                 }
+             }
+         }
+     }
+     
+    
+
 }
 
