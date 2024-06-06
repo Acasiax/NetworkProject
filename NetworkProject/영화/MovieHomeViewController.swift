@@ -27,6 +27,37 @@ class MovieHomeViewController: UIViewController {
     @objc func searchButtonClicked() {
     }
     
+    func fetcData(queryDate: String) {
+        guard let url = getURL(date: queryDate) else {
+            fatalError("URL 생성에 실패했습니다.")
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("데이터가 응답 하지 않네용..")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let boxOfficeResponse = try decoder.decode(MVdataResponse.self, from: data)
+                let tempDayBoxOffice = boxOfficeResponse.moavieResult.dailyMVOfficeList.map { receive in
+                 
+                }
+
+                DispatchQueue.main.async {
+                    self.dayBoxOffice = tempDayBoxOffice
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print("JSON 파싱에서 에러가 났어요: \(error.localizedDescription)")
+            }
+        }.resume()
+    }
+    
     
     func getURL(date: String) -> URL? {
         var components = URLComponents(string: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
