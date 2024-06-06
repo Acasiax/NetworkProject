@@ -29,9 +29,20 @@ struct DailyMVdata: Codable {
 }
 
 
+extension UITextField {
+    static func makeSearchField() -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "날짜 입력 (YYYYMMDD)"
+        textField.textAlignment = .center
+        textField.backgroundColor = .white
+        return textField
+    }
+}
+
 extension UIButton {
     func styleSettingUP() {
-        self.backgroundColor = .systemBlue
+        self.backgroundColor = .white
         self.layer.cornerRadius = 10
         self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -74,28 +85,15 @@ extension UITableView {
 
 extension UIView {
     func addSubviews(_ views: UIView...) {
-        for view in views {
-            self.addSubview(view)
+        for addview in views {
+            self.addSubview(addview)
         }
     }
-    
     static func makeSelectedView() -> UIView {
-        let selectedView = UIView(frame: .zero)
-        selectedView.backgroundColor = .white.withAlphaComponent(0.5)
-        selectedView.layer.cornerRadius = 8
-        return selectedView
-    }
-}
-
-
-extension UITextField {
-    static func makeSearchField() -> UITextField {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "날짜 입력 (YYYYMMDD)"
-        textField.textAlignment = .center
-        textField.backgroundColor = .white
-        return textField
-    }
+        let selectedView = UIView(frame: .infinite)
+         selectedView.backgroundColor = .white.withAlphaComponent(0.5)
+         selectedView.layer.cornerRadius = 8
+         return selectedView
+     }
 }
 
