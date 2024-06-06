@@ -63,7 +63,7 @@ class RotaryHomeViewController: UIViewController {
                    resultLabel.text = "회차 번호를 입력해주세요."
                    return
                }
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(numberTextField.text!)"
+        let url = "\(APIURL.lottoURL)\(numberTextField.text!)"
         AF.request(url).responseDecodable(of: Lotto.self) { response in
                 switch response.result {
                 case .success(let lotto):
