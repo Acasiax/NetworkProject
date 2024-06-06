@@ -13,7 +13,10 @@ import Foundation
 struct APIURL {
     static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="
     static let upbitURL = ""
-    //static let movieURL = ""
+    static let movieURLComponents: URLComponents = {
+            var components = URLComponents(string: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")!
+            return components
+        }()
     
 }
 

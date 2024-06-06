@@ -49,39 +49,21 @@ class MovieHomeViewController: UIViewController {
                    if let jsonString = String(data: data, encoding: .utf8) {
                        print("📍받은 데이터: \(jsonString)")
                    }
-                   
-//            do {
-//                let decoder = JSONDecoder()
-//                let boxOfficeResponse = try decoder.decode(MVdataResponse.self, from: data)
-//                let tempDayBoxOffice = boxOfficeResponse.moavieResult.dailyMVOfficeList.map { receive in
-//                    MoviedataModel(
-//                        rank: receive.rank,
-//                        title: receive.movieTitle,
-//                        publicDate: receive.openData.count < 10 ? "미개봉" : receive.openData
-//                    )
-//                }
-//
-//                DispatchQueue.main.async {
-//                    self.dayBoxOffice = tempDayBoxOffice
-//                    self.tableView.reloadData()
-//                }
-//            } catch {
-//                print("JSON 파싱에서 에러가 났어요: \(error.localizedDescription)")
-//            }
+            
             do {
-                           let decoder = JSONDecoder()
-                           let boxOfficeResponse = try decoder.decode(BoxOfficeResponse.self, from: data)
-                           let tempDayBoxOffice = boxOfficeResponse.boxOfficeResult.dailyBoxOfficeList.map { receive in
-                               BoxOfficeModel(
-                                   rank: receive.rank,
-                                   title: receive.movieNm,
-                                   pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt
-                               )
-                           }
-
-                           DispatchQueue.main.async {
-                               self.dayBoxOffice = tempDayBoxOffice
-                               self.tableView.reloadData()
+                let decoder = JSONDecoder()
+                let boxOfficeResponse = try decoder.decode(BoxOfficeResponse.self, from: data)
+                let tempDayBoxOffice = boxOfficeResponse.boxOfficeResult.dailyBoxOfficeList.map { receive in
+                    BoxOfficeModel(
+                        rank: receive.rank,
+                        title: receive.movieNm,
+                        pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt
+                    )
+                }
+                
+                DispatchQueue.main.async {
+                    self.dayBoxOffice = tempDayBoxOffice
+                    self.tableView.reloadData()
                            }
                        } catch {
                            print("JSON parsing error: \(error.localizedDescription)")
@@ -92,12 +74,12 @@ class MovieHomeViewController: UIViewController {
     
     
     func getURL(date: String) -> URL? {
-        var components = URLComponents(string: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
-        components?.queryItems = [
+        var components = APIURL.movieURLComponents
+        components.queryItems = [
             URLQueryItem(name: "key", value: APIKey.movieKey),
             URLQueryItem(name: "targetDt", value: date)
         ]
-        return components?.url
+        return components.url
     }
     
 
@@ -130,8 +112,8 @@ extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
            cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
            cell.detailTextLabel?.text = movie.pubDate
            cell.backgroundColor = .clear
-           cell.textLabel?.textColor = .green
-           cell.detailTextLabel?.textColor = .green
+           cell.textLabel?.textColor = .black
+           cell.detailTextLabel?.textColor = .black
            return cell
        }
    }
