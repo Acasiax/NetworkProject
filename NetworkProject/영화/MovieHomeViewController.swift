@@ -21,7 +21,7 @@ class MovieHomeViewController: UIViewController {
         title = "영화과제"
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         searchField.text = dateFormatter.string(from: yesterday)
-
+        setupMovieHomeUI(searchField: searchField, searchButton: searchButton, tableView: tableView)
      
     }
     @objc func searchButtonClicked() {
@@ -32,11 +32,13 @@ class MovieHomeViewController: UIViewController {
             showAlert(message: "날짜를 입력해주세요.")
             return
         }
-        fetchBoxOfficeDate(queryDate: dateString)
+       
     }
     
     func showAlert(message: String) {
-        
+        let alert = UIAlertController(title: "경고", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }

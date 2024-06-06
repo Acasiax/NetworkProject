@@ -16,8 +16,12 @@ extension UIViewController {
         searchField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(30)
             make.left.equalToSuperview().offset(20)
-            make.right.equalTo(searchButton.snp.left).offset(-10)
             make.height.equalTo(40)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(searchField.snp.bottom).offset(20)
+            make.left.right.bottom.equalToSuperview()
         }
         
     }
