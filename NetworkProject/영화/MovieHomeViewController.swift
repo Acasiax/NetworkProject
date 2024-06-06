@@ -6,17 +6,13 @@
 //
 
 import UIKit
-import SnapKit
-import Alamofire
 
 class MovieHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+     
     }
-    
-
 
 }

@@ -26,7 +26,8 @@
 		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
-		AAE2093F2C117E25006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */; };
+		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
+		AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209722C119AC5006310B7 /* Movie+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,8 @@
 		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
-		AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
+		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
+		AAE209722C119AC5006310B7 /* Movie+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,10 +170,19 @@
 		AAE2093D2C117E12006310B7 /* 영화 */ = {
 			isa = PBXGroup;
 			children = (
-				AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */,
+				AAE209712C119A9F006310B7 /* Model */,
+				AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */,
 			);
 			name = "영화";
 			path = "영화";
+			sourceTree = "<group>";
+		};
+		AAE209712C119A9F006310B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAE209722C119AC5006310B7 /* Movie+Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE2093F2C117E25006310B7 /* MovieHomeViewController.swift in Sources */,
+				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
@@ -265,6 +276,7 @@
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
+				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */,
 				AA2CFC7B2C10580900797F03 /* SceneDelegate.swift in Sources */,
