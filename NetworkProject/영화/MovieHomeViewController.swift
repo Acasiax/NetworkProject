@@ -22,12 +22,14 @@ class MovieHomeViewController: UIViewController {
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         searchField.text = dateFormatter.string(from: yesterday)
         setupMovieHomeUI(searchField: searchField, searchButton: searchButton, tableView: tableView)
-     
+        searchBoxOffice()
     }
     @objc func searchButtonClicked() {
+        print("버튼 클릭")
+        searchBoxOffice()
     }
     
-    func fetcData(queryDate: String) {
+    func fetchcData(queryDate: String) {
         guard let url = getURL(date: queryDate) else {
             fatalError("URL 생성에 실패했습니다.")
         }
@@ -41,11 +43,20 @@ class MovieHomeViewController: UIViewController {
                 print("데이터가 응답 하지 않네용..")
                 return
             }
+            // 디버깅용 데이터 출력
+                   if let jsonString = String(data: data, encoding: .utf8) {
+                       print("받은 데이터: \(jsonString)")
+                   }
+                   
             do {
                 let decoder = JSONDecoder()
                 let boxOfficeResponse = try decoder.decode(MVdataResponse.self, from: data)
                 let tempDayBoxOffice = boxOfficeResponse.moavieResult.dailyMVOfficeList.map { receive in
-                 
+                    MoviedataModel(
+                        rank: receive.rank,
+                        title: receive.movieTitle,
+                        publicDate: receive.openData.count < 10 ? "미개봉" : receive.openData
+                    )
                 }
 
                 DispatchQueue.main.async {
@@ -75,7 +86,7 @@ class MovieHomeViewController: UIViewController {
             showAlert(message: "날짜를 입력해주세요.")
             return
         }
-     
+        fetchcData(queryDate: dateString)
     }
     
     func showAlert(message: String) {
