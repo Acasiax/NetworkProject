@@ -24,7 +24,7 @@ class RotaryHomeViewController: UIViewController {
     }
     let numberTextField: UITextField = .createCustomTextField(placeholder: "회차 번호 입력", keyboardType: .numberPad, textAlignment: .center, borderStyle: .roundedRect)
     
-    let checkButton: UIButton = .createCustomButton(title: "확인", target: self, action: #selector(checkButtonClicked))
+    let checkButton: UIButton = .createCustomButton(title: "결과 확인", target: self, action: #selector(checkButtonClicked))
     
     let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
     let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)

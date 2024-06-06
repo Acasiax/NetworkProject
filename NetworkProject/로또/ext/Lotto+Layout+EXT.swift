@@ -21,6 +21,7 @@ extension RotaryHomeViewController {
         view.addSubview(separatorView)
         
         
+        
         numberTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.centerX.equalToSuperview()
@@ -50,17 +51,16 @@ extension RotaryHomeViewController {
         }
         
         separatorView.snp.makeConstraints { make in
-            make.top.equalTo(drawResultLabel.snp.bottom).offset(10)
+            make.top.equalTo(resultLabel.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(1)
         }
         
-        drawResultLabel.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel.snp.bottom).offset(10)
-            make.centerX.equalToSuperview()
-        }
-        
         setupNumberCircles()
         
+        drawResultLabel.snp.makeConstraints { make in
+            make.top.equalTo(separatorView.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
     }
 }
