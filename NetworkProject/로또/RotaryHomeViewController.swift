@@ -28,6 +28,7 @@ class RotaryHomeViewController: UIViewController {
     
     let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
     let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)
+    let drawResultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 1)
     let dateLabel: UILabel = .createCustomLabel(text: "추첨 날짜", textAlignment: .right, numberOfLines: 1)
     let separatorView: UIView = {
         let view = UIView()
@@ -36,13 +37,25 @@ class RotaryHomeViewController: UIViewController {
     }()
     
     var numberCircles: [UIView] = []
+    let pickerView = UIPickerView()
+    let drawNumbers = Array(1...1000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
                 setupUI()
-       
+        setupPickerView()
+        numberTextField.text = "893"
+               if let row = drawNumbers.firstIndex(of: 893) {
+                   pickerView.selectRow(row, inComponent: 0, animated: false)
+               }
     }
+    
+    func setupPickerView() {
+           pickerView.delegate = self
+           pickerView.dataSource = self
+           numberTextField.inputView = pickerView
+       }
     
     @objc func checkButtonClicked() {
           print(#function)
@@ -55,8 +68,7 @@ class RotaryHomeViewController: UIViewController {
                 switch response.result {
                 case .success(let lotto):
                     if lotto.returnValue == "success" {
-                        //   \(lotto.drwNoDate) 추첨결과
-//                        당첨 번호: \(lotto.drwtNo1), \(lotto.drwtNo2), \(lotto.drwtNo3), \(lotto.drwtNo4), \(lotto.drwtNo5), \(lotto.drwtNo6)
+
                         self.resultLabel.text = """
                         
                         보너스 번호: \(lotto.bnusNo)
@@ -64,6 +76,9 @@ class RotaryHomeViewController: UIViewController {
                         //🔥🔧 삽질
                         self.dateLabel.text = "\(lotto.drwNoDate) 추첨"
                         self.updateLottoNumbers(lotto: lotto)
+                       // self.drawNumbers.textColor = .orange
+                        self.drawResultLabel.text = "\(drawNumber)회 당첨결과"
+                        self.drawResultLabel.font = .systemFont(ofSize: 20)
                     } else {
                         self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
                     }
@@ -80,6 +95,7 @@ class RotaryHomeViewController: UIViewController {
         view.addSubview(resultLabel)
         view.addSubview(infoLabel)
         view.addSubview(dateLabel)
+        view.addSubview(drawResultLabel)
         view.addSubview(separatorView)
         
         
@@ -112,9 +128,14 @@ class RotaryHomeViewController: UIViewController {
         }
         
         separatorView.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(10)
+            make.top.equalTo(drawResultLabel.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(1)
+        }
+        
+        drawResultLabel.snp.makeConstraints { make in
+            make.top.equalTo(resultLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
         }
         
         setupNumberCircles()
@@ -182,3 +203,26 @@ class RotaryHomeViewController: UIViewController {
     }
 }
 
+
+extension RotaryHomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+          return drawNumbers.count
+      }
+      
+      // UIPickerViewDelegate
+      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+          return String(drawNumbers[row])
+      }
+      
+      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+          numberTextField.text = String(drawNumbers[row])
+      }
+    
+    
+    
+}
