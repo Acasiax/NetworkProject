@@ -54,15 +54,51 @@ class RotaryHomeViewController: UIViewController {
     @objc func checkButtonClicked() {
           print(#function)
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(numberTextField.text!)"
-         AF.request(url).responseDecodable(of: Lotto.self) { response in
-              switch response.result {
-              case .success(let value):
-                  print(value)
-                  self.resultLabel.text = "\(value.drwNoDate)\n1등 당첨금액: \(value.totSellamnt.formatted())원"
-              case .failure(let error):
-                  print(error)
-                  self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
-              }
+        AF.request(url).responseDecodable(of: Lotto.self) { response in
+                switch response.result {
+                case .success(let lotto):
+                    if lotto.returnValue == "success" {
+                        self.resultLabel.text = """
+                        \(lotto.drwNoDate) 추첨결과
+                        당첨 번호: \(lotto.drwtNo1), \(lotto.drwtNo2), \(lotto.drwtNo3), \(lotto.drwtNo4), \(lotto.drwtNo5), \(lotto.drwtNo6)
+                        보너스 번호: \(lotto.bnusNo)
+                        """
+                    } else {
+                        self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
+                    }
+                case .failure(let error):
+                    print(error)
+                    self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
+                }
+            }
+        
+      }
+    
+    
+    func setupUI() {
+          view.addSubview(numberTextField)
+          view.addSubview(checkButton)
+          view.addSubview(resultLabel)
+          
+          numberTextField.snp.makeConstraints { make in
+              make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+              make.centerX.equalToSuperview()
+              make.width.equalTo(200)
+              make.height.equalTo(40)
+          }
+          
+          checkButton.snp.makeConstraints { make in
+              make.top.equalTo(numberTextField.snp.bottom).offset(10)
+              make.centerX.equalToSuperview()
+          }
+          
+          resultLabel.snp.makeConstraints { make in
+              make.top.equalTo(checkButton.snp.bottom).offset(20)
+              make.left.equalToSuperview().offset(20)
+              make.right.equalToSuperview().offset(-20)
           }
       }
+    
+    
 }
+
