@@ -156,15 +156,29 @@ class RotaryHomeViewController: UIViewController {
                  }
              }
          }
-     }
+    }
     func updateLottoNumbers(lotto: Lotto) {
-            let numbers = [lotto.drwtNo1, lotto.drwtNo2, lotto.drwtNo3, lotto.drwtNo4, lotto.drwtNo5, lotto.drwtNo6, lotto.bnusNo]
-            
-            for (index, number) in numbers.enumerated() {
-                if let label = numberCircles[index].viewWithTag(100) as? UILabel {
-                    label.text = "\(number)"
+        let numbers = [lotto.drwtNo1, lotto.drwtNo2, lotto.drwtNo3, lotto.drwtNo4, lotto.drwtNo5, lotto.drwtNo6, lotto.bnusNo]
+        
+        for (index, number) in numbers.enumerated() {
+            if let label = numberCircles[index].viewWithTag(100) as? UILabel {
+                label.text = "\(number)"
+                switch number {
+                case 1...10:
+                    numberCircles[index].backgroundColor = UIColor(red: 1.00, green: 0.75, blue: 0.04, alpha: 1.00)
+                    label.textColor = .white
+                case 11...19:
+                    numberCircles[index].backgroundColor = UIColor(red: 1.00, green: 0.30, blue: 0.43, alpha: 1.00)
+                    label.textColor = .white
+                case 20...40:
+                    numberCircles[index].backgroundColor = UIColor(red: 0.64, green: 0.82, blue: 1.00, alpha: 1.00)
+                    label.textColor = .white
+                default:
+                    numberCircles[index].backgroundColor = .lightGray
+                    label.textColor = .white
                 }
             }
         }
+    }
 }
 
