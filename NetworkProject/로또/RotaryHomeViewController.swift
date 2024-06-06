@@ -54,6 +54,8 @@ class RotaryHomeViewController: UIViewController {
                         당첨 번호: \(lotto.drwtNo1), \(lotto.drwtNo2), \(lotto.drwtNo3), \(lotto.drwtNo4), \(lotto.drwtNo5), \(lotto.drwtNo6)
                         보너스 번호: \(lotto.bnusNo)
                         """
+                        //🔥🔧 삽질
+                        self.updateLottoNumbers(lotto: lotto)
                     } else {
                         self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
                     }
@@ -97,6 +99,7 @@ class RotaryHomeViewController: UIViewController {
            circleView.backgroundColor = .lightGray
            
            let numberLabel = UILabel()
+        numberLabel.tag = 100
            numberLabel.textAlignment = .center
            numberLabel.textColor = .white
            circleView.addSubview(numberLabel)
@@ -125,8 +128,14 @@ class RotaryHomeViewController: UIViewController {
              }
          }
      }
-     
-    
-
+    func updateLottoNumbers(lotto: Lotto) {
+            let numbers = [lotto.drwtNo1, lotto.drwtNo2, lotto.drwtNo3, lotto.drwtNo4, lotto.drwtNo5, lotto.drwtNo6, lotto.bnusNo]
+            
+            for (index, number) in numbers.enumerated() {
+                if let label = numberCircles[index].viewWithTag(100) as? UILabel {
+                    label.text = "\(number)"
+                }
+            }
+        }
 }
 
