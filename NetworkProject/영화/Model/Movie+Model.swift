@@ -42,7 +42,7 @@ extension UITextField {
 
 extension UIButton {
     func styleSettingUP() {
-        self.backgroundColor = .white
+        self.backgroundColor = .green
         self.layer.cornerRadius = 10
         self.setTitleColor(.white, for: .normal)
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
