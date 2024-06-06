@@ -21,7 +21,7 @@ class MovieHomeViewController: UIViewController {
         title = "영화과제"
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         searchField.text = dateFormatter.string(from: yesterday)
-
+        setupMovieHomeUI(searchField: searchField, searchButton: searchButton, tableView: tableView)
      
     }
     @objc func searchButtonClicked() {

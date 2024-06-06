@@ -35,7 +35,7 @@ extension UITextField {
         textField.borderStyle = .roundedRect
         textField.placeholder = "날짜 입력 (YYYYMMDD)"
         textField.textAlignment = .center
-        textField.backgroundColor = .white
+        textField.backgroundColor = .lightGray
         return textField
     }
 }
@@ -89,8 +89,9 @@ extension UIView {
             self.addSubview(addview)
         }
     }
+    
     static func makeSelectedView() -> UIView {
-        let selectedView = UIView(frame: .infinite)
+        let selectedView = UIView(frame: .zero)
          selectedView.backgroundColor = .white.withAlphaComponent(0.5)
          selectedView.layer.cornerRadius = 8
          return selectedView
