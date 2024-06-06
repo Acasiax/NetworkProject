@@ -28,10 +28,11 @@ extension UIButton {
 }
 
 extension UILabel {
-    static func createCustomLabel(textAlignment: NSTextAlignment = .left, numberOfLines: Int = 1) -> UILabel {
+    static func createCustomLabel(text: String = "", textAlignment: NSTextAlignment = .left, numberOfLines: Int = 1) -> UILabel {
         let label = UILabel()
         label.numberOfLines = numberOfLines
         label.textAlignment = textAlignment
+        label.text = text
         return label
     }
 }
