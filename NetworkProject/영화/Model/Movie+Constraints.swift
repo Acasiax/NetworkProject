@@ -11,6 +11,13 @@ import SnapKit
 extension UIViewController {
     
     func setupMovieHomeUI(searchField: UITextField, searchButton: UIButton, tableView: UITableView) {
+        
+        let backgroundImageView = UIImageView(frame: self.view.bounds)
+        backgroundImageView.image = UIImage(named: "밀수")
+        backgroundImageView.contentMode = .scaleAspectFill
+        self.view.addSubview(backgroundImageView)
+        self.view.sendSubviewToBack(backgroundImageView) //서브뷰 게층순서 뒤로 보내기
+        
         view.addSubviews(searchField, searchButton, tableView)
         
         searchField.snp.makeConstraints { make in
@@ -31,6 +38,7 @@ extension UIViewController {
             make.top.equalTo(searchField.snp.bottom).offset(20)
             make.left.right.bottom.equalToSuperview()
         }
+        tableView.backgroundColor = .clear
     }
    
 }
