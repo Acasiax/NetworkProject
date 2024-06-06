@@ -11,7 +11,7 @@ import SnapKit
 struct MoviedataModel {
     let rank: String
     let title: String
-    let pubDate: String
+    let publicDate: String
 }
 
 struct MVdataResponse: Codable {
@@ -25,5 +25,5 @@ struct MVdataResult: Codable {
 struct DailyMVdata: Codable {
     let rank: String
     let movieTitle: String
-    let openDt: String
+    let openData: String
 }

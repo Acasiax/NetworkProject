@@ -9,10 +9,36 @@ import UIKit
 
 class MovieHomeViewController: UIViewController {
 
+    var dayBoxOffice: [MoviedataModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
      
     }
 
+}
+
+
+extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dayBoxOffice.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+        let movie = dayBoxOffice[indexPath.row]
+        cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
+        cell.detailTextLabel?.text = movie.publicDate
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = .green
+        cell.detailTextLabel?.textColor = .green
+        return cell
+    }
+    
+    
+    
+    
+    
 }
