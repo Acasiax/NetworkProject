@@ -45,6 +45,7 @@ class RotaryHomeViewController: UIViewController {
         view.backgroundColor = .white
                 setupUI()
         setupPickerView()
+        setupGestureRecognizer()
         numberTextField.text = "893"
                if let row = drawNumbers.firstIndex(of: 893) {
                    pickerView.selectRow(row, inComponent: 0, animated: false)
@@ -151,6 +152,15 @@ class RotaryHomeViewController: UIViewController {
             }
         }
     }
+    func setupGestureRecognizer() {
+          let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+          view.addGestureRecognizer(tapGesture)
+      }
+      
+      @objc func dismissKeyboard() {
+          view.endEditing(true)
+      }
+      
 }
 
 

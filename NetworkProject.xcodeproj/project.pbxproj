@@ -26,6 +26,7 @@
 		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
+		AAE2093F2C117E25006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
+		AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AAE2093D2C117E12006310B7 /* 영화 */,
 				AA2CFCA22C109F8500797F03 /* 로또 */,
 				AA2CFC8F2C1058F100797F03 /* 넷플릭스 */,
 				AA2CFC782C10580900797F03 /* AppDelegate.swift */,
@@ -160,6 +163,15 @@
 				AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */,
 			);
 			path = ext;
+			sourceTree = "<group>";
+		};
+		AAE2093D2C117E12006310B7 /* 영화 */ = {
+			isa = PBXGroup;
+			children = (
+				AAE2093E2C117E25006310B7 /* MovieHomeViewController.swift */,
+			);
+			name = "영화";
+			path = "영화";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE2093F2C117E25006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,

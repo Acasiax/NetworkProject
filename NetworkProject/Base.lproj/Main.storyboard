@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="2037.4045801526718" y="747.88732394366195"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Home View Controller-->
         <scene sceneID="thq-i6-nbA">
             <objects>
-                <viewController id="t2M-4m-7I0" sceneMemberID="viewController">
+                <viewController id="t2M-4m-7I0" customClass="MovieHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGr-Qf-q92">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
