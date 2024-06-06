@@ -27,6 +27,18 @@ class MovieHomeViewController: UIViewController {
     @objc func searchButtonClicked() {
     }
     
+    
+    func getURL(date: String) -> URL? {
+        var components = URLComponents(string: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json")
+        components?.queryItems = [
+            URLQueryItem(name: "key", value: APIKey.movieKey),
+            URLQueryItem(name: "targetDt", value: date)
+        ]
+        return components?.url
+    }
+    
+
+    
     func searchBoxOffice() {
         guard let dateString = searchField.text, !dateString.isEmpty else {
             showAlert(message: "날짜를 입력해주세요.")
