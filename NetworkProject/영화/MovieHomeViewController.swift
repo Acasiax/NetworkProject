@@ -18,12 +18,27 @@ class MovieHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "영화과제"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        searchField.text = dateFormatter.string(from: yesterday)
 
      
     }
     @objc func searchButtonClicked() {
     }
+    
+    func searchBoxOffice() {
+        guard let dateString = searchField.text, !dateString.isEmpty else {
+            showAlert(message: "날짜를 입력해주세요.")
+            return
+        }
+        fetchBoxOfficeDate(queryDate: dateString)
+    }
+    
+    func showAlert(message: String) {
+        
+    }
+    
 }
 
 
