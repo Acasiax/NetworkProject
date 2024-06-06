@@ -13,9 +13,10 @@ import Foundation
 struct APIURL {
     static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="
     static let upbitURL = ""
+    //static let movieURL = ""
     
 }
 
 struct APIKey {
-    static let movieKey = ""
+    static let movieKey = "7837802f3b92cc15de0d033485739761"
 }

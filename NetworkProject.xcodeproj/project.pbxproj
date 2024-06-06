@@ -85,6 +85,7 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 				AAE2093D2C117E12006310B7 /* 영화 */,
 				AA2CFCA22C109F8500797F03 /* 로또 */,
 				AA2CFC8F2C1058F100797F03 /* 넷플릭스 */,
@@ -150,7 +151,6 @@
 			children = (
 				AA2CFCAC2C113A4900797F03 /* ext */,
 				AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */,
-				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 			);
 			name = "로또";
 			path = "로또";
