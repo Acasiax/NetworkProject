@@ -8,37 +8,27 @@
 import UIKit
 import SnapKit
 
-struct MoviedataModel {
+struct BoxOfficeModel {
     let rank: String
     let title: String
-    let publicDate: String
+    let pubDate: String
 }
 
-struct MVdataResponse: Codable {
-    let moavieResult: MVdataResult
+struct BoxOfficeResponse: Codable {
+    let boxOfficeResult: BoxOfficeResult
 }
 
-struct MVdataResult: Codable {
-    let dailyMVOfficeList: [DailyMVdata]
+struct BoxOfficeResult: Codable {
+    let dailyBoxOfficeList: [DailyBoxOffice]
 }
 
-struct DailyMVdata: Codable {
+struct DailyBoxOffice: Codable {
     let rank: String
-    let movieTitle: String
-    let openData: String
+    let movieNm: String
+    let openDt: String
 }
 
 
-extension UITextField {
-    static func makeSearchField() -> UITextField {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "날짜 입력 (YYYYMMDD)"
-        textField.textAlignment = .center
-        textField.backgroundColor = .lightGray
-        return textField
-    }
-}
 
 extension UIButton {
     func styleSettingUP() {
@@ -66,7 +56,6 @@ extension DateFormatter {
     }
 }
 
-
 extension UITableView {
     func configure(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         self.delegate = delegate
@@ -82,11 +71,10 @@ extension UITableView {
     }
 }
 
-
 extension UIView {
     func addSubviews(_ views: UIView...) {
-        for addview in views {
-            self.addSubview(addview)
+        for view in views {
+            self.addSubview(view)
         }
     }
     
@@ -98,3 +86,13 @@ extension UIView {
      }
 }
 
+extension UITextField {
+    static func makeSearchField() -> UITextField {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "날짜 입력 (YYYYMMDD)"
+        textField.textAlignment = .center
+        textField.backgroundColor = .lightGray
+        return textField
+    }
+}

@@ -9,7 +9,7 @@ import UIKit
 
 class MovieHomeViewController: UIViewController {
 
-    var dayBoxOffice: [MoviedataModel] = []
+    var dayBoxOffice: [BoxOfficeModel] = []
     let searchField: UITextField = .makeSearchField()
     let searchButton: UIButton = .makeSearchButton(target: self, action: #selector(searchButtonClicked))
     let dateFormatter: DateFormatter = .defaultFormatter()
@@ -19,9 +19,11 @@ class MovieHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "영화과제"
+        
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         searchField.text = dateFormatter.string(from: yesterday)
         setupMovieHomeUI(searchField: searchField, searchButton: searchButton, tableView: tableView)
+        tableView.configure(delegate: self, dataSource: self)
         searchBoxOffice()
     }
     @objc func searchButtonClicked() {
@@ -45,29 +47,48 @@ class MovieHomeViewController: UIViewController {
             }
             // 디버깅용 데이터 출력
                    if let jsonString = String(data: data, encoding: .utf8) {
-                       print("받은 데이터: \(jsonString)")
+                       print("📍받은 데이터: \(jsonString)")
                    }
                    
+//            do {
+//                let decoder = JSONDecoder()
+//                let boxOfficeResponse = try decoder.decode(MVdataResponse.self, from: data)
+//                let tempDayBoxOffice = boxOfficeResponse.moavieResult.dailyMVOfficeList.map { receive in
+//                    MoviedataModel(
+//                        rank: receive.rank,
+//                        title: receive.movieTitle,
+//                        publicDate: receive.openData.count < 10 ? "미개봉" : receive.openData
+//                    )
+//                }
+//
+//                DispatchQueue.main.async {
+//                    self.dayBoxOffice = tempDayBoxOffice
+//                    self.tableView.reloadData()
+//                }
+//            } catch {
+//                print("JSON 파싱에서 에러가 났어요: \(error.localizedDescription)")
+//            }
             do {
-                let decoder = JSONDecoder()
-                let boxOfficeResponse = try decoder.decode(MVdataResponse.self, from: data)
-                let tempDayBoxOffice = boxOfficeResponse.moavieResult.dailyMVOfficeList.map { receive in
-                    MoviedataModel(
-                        rank: receive.rank,
-                        title: receive.movieTitle,
-                        publicDate: receive.openData.count < 10 ? "미개봉" : receive.openData
-                    )
-                }
+                           let decoder = JSONDecoder()
+                           let boxOfficeResponse = try decoder.decode(BoxOfficeResponse.self, from: data)
+                           let tempDayBoxOffice = boxOfficeResponse.boxOfficeResult.dailyBoxOfficeList.map { receive in
+                               BoxOfficeModel(
+                                   rank: receive.rank,
+                                   title: receive.movieNm,
+                                   pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt
+                               )
+                           }
 
-                DispatchQueue.main.async {
-                    self.dayBoxOffice = tempDayBoxOffice
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print("JSON 파싱에서 에러가 났어요: \(error.localizedDescription)")
-            }
-        }.resume()
-    }
+                           DispatchQueue.main.async {
+                               self.dayBoxOffice = tempDayBoxOffice
+                               self.tableView.reloadData()
+                           }
+                       } catch {
+                           print("JSON parsing error: \(error.localizedDescription)")
+                       }
+                   }.resume()
+               }
+
     
     
     func getURL(date: String) -> URL? {
@@ -100,22 +121,17 @@ class MovieHomeViewController: UIViewController {
 
 extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dayBoxOffice.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
-        let movie = dayBoxOffice[indexPath.row]
-        cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
-        cell.detailTextLabel?.text = movie.publicDate
-        cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .black
-        cell.detailTextLabel?.textColor = .black
-        return cell
-    }
-    
-    
-    
-    
-    
-}
+           return dayBoxOffice.count
+       }
+
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+           let movie = dayBoxOffice[indexPath.row]
+           cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)"
+           cell.detailTextLabel?.text = movie.pubDate
+           cell.backgroundColor = .clear
+           cell.textLabel?.textColor = .green
+           cell.detailTextLabel?.textColor = .green
+           return cell
+       }
+   }
