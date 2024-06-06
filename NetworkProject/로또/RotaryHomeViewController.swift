@@ -17,17 +17,23 @@ class RotaryHomeViewController: UIViewController {
          let drwtNo2: Int
          let drwtNo3: Int
          let drwtNo4: Int
-         let drwtNo5: Int
-         let drwtNo6: Int
-         let bnusNo: Int
-         let returnValue: String
-     }
+        let drwtNo5: Int
+        let drwtNo6: Int
+        let bnusNo: Int
+        let returnValue: String
+    }
     let numberTextField: UITextField = .createCustomTextField(placeholder: "회차 번호 입력", keyboardType: .numberPad, textAlignment: .center, borderStyle: .roundedRect)
-        
+    
     let checkButton: UIButton = .createCustomButton(title: "확인", target: self, action: #selector(checkButtonClicked))
-        
+    
     let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
-        
+    let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)
+    let dateLabel: UILabel = .createCustomLabel(text: "날짜", textAlignment: .right, numberOfLines: 1)
+    let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
     
     var numberCircles: [UIView] = []
     
