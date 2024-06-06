@@ -22,4 +22,5 @@ struct APIURL {
 
 struct APIKey {
     static let movieKey = "7837802f3b92cc15de0d033485739761"
+    static let weatherKey = "98452eee52fc2e5b3aa9be02efc8a3fb"
 }

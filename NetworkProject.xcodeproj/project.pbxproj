@@ -29,6 +29,9 @@
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
 		AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209722C119AC5006310B7 /* Movie+Model.swift */; };
 		AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209742C11A132006310B7 /* Movie+Constraints.swift */; };
+		AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209772C11F51B006310B7 /* WeatherHomeViewController.swift */; };
+		AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2097E2C11FAF6006310B7 /* WeatherTableViewCell.swift */; };
+		AAE209812C11FAF6006310B7 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE2097F2C11FAF6006310B7 /* WeatherTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
 		AAE209722C119AC5006310B7 /* Movie+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Model.swift"; sourceTree = "<group>"; };
 		AAE209742C11A132006310B7 /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
+		AAE209772C11F51B006310B7 /* WeatherHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewController.swift; sourceTree = "<group>"; };
+		AAE2097E2C11FAF6006310B7 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		AAE2097F2C11FAF6006310B7 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AAE209762C11F4F7006310B7 /* 날씨 */,
 				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 				AAE2093D2C117E12006310B7 /* 영화 */,
 				AA2CFCA22C109F8500797F03 /* 로또 */,
@@ -188,6 +195,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AAE209762C11F4F7006310B7 /* 날씨 */ = {
+			isa = PBXGroup;
+			children = (
+				AAE209772C11F51B006310B7 /* WeatherHomeViewController.swift */,
+				AAE2097E2C11FAF6006310B7 /* WeatherTableViewCell.swift */,
+				AAE2097F2C11FAF6006310B7 /* WeatherTableViewCell.xib */,
+			);
+			name = "날씨";
+			path = "날씨";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,6 +274,7 @@
 			files = (
 				AA2CFC852C10580B00797F03 /* LaunchScreen.storyboard in Resources */,
 				AA2CFC822C10580B00797F03 /* Assets.xcassets in Resources */,
+				AAE209812C11FAF6006310B7 /* WeatherTableViewCell.xib in Resources */,
 				AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */,
 				AA2CFC802C10580900797F03 /* Main.storyboard in Resources */,
 			);
@@ -268,11 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
+				AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */,
 				AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,

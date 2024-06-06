@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1127.4809160305342" y="1471.8309859154931"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather Home View Controller-->
         <scene sceneID="hHf-nG-a2B">
             <objects>
-                <viewController id="9oF-Ge-f1Y" sceneMemberID="viewController">
+                <viewController id="9oF-Ge-f1Y" customClass="WeatherHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w6K-V5-giq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
