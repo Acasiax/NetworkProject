@@ -23,6 +23,7 @@
 		AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */; };
 		AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA52C10A2C100797F03 /* APIKey.swift */; };
 		AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFCAA2C10A33700797F03 /* Alamofire */; };
+		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signup+Constraints.swift"; sourceTree = "<group>"; };
 		AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryHomeViewController.swift; sourceTree = "<group>"; };
 		AA2CFCA52C10A2C100797F03 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,11 +140,20 @@
 		AA2CFCA22C109F8500797F03 /* 로또 */ = {
 			isa = PBXGroup;
 			children = (
+				AA2CFCAC2C113A4900797F03 /* ext */,
 				AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */,
 				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 			);
 			name = "로또";
 			path = "로또";
+			sourceTree = "<group>";
+		};
+		AA2CFCAC2C113A4900797F03 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */,
+			);
+			path = ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
+				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AA2CFC7B2C10580900797F03 /* SceneDelegate.swift in Sources */,

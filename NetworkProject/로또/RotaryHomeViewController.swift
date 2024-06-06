@@ -22,14 +22,7 @@ class RotaryHomeViewController: UIViewController {
          let bnusNo: Int
          let returnValue: String
      }
-    let numberTextField: UITextField = {
-            let textField = UITextField()
-            textField.borderStyle = .roundedRect
-            textField.placeholder = "회차 번호 입력"
-            textField.textAlignment = .center
-            textField.keyboardType = .numberPad
-            return textField
-        }()
+    let numberTextField: UITextField = .createCustomTextField(placeholder: "회차 번호 입력", keyboardType: .numberPad, textAlignment: .center, borderStyle: .roundedRect)
         
         let checkButton: UIButton = {
             let button = UIButton(type: .system)
@@ -53,6 +46,10 @@ class RotaryHomeViewController: UIViewController {
     
     @objc func checkButtonClicked() {
           print(#function)
+        guard let drawNumber = numberTextField.text, !drawNumber.isEmpty else {
+                   resultLabel.text = "회차 번호를 입력해주세요."
+                   return
+               }
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(numberTextField.text!)"
         AF.request(url).responseDecodable(of: Lotto.self) { response in
                 switch response.result {
