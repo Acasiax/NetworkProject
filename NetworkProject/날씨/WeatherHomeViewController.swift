@@ -34,7 +34,7 @@ class WeatherHomeViewController: UIViewController {
     }
     
     private func setupUI() {
-        
+        view.backgroundColor = UIColor(red: 0.64, green: 0.82, blue: 1.00, alpha: 1.00)
         view.addSubview(dateLabel)
         view.addSubview(currentLocationLabel)
         view.addSubview(tableView)
@@ -55,6 +55,9 @@ class WeatherHomeViewController: UIViewController {
         }
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
         tableView.snp.makeConstraints { make in
             make.top.equalTo(currentLocationLabel.snp.bottom).offset(16)
@@ -86,13 +89,20 @@ extension WeatherHomeViewController: UITableViewDelegate, UITableViewDataSource 
                 return UITableViewCell()
             }
             cell.configure(description: data)
+            cell.backgroundColor = .clear
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as? WeatherTableViewCell else {
                 return UITableViewCell()
             }
+            cell.backgroundColor = .clear
             cell.configure(description: data)
+            cell.selectionStyle = .none
             return cell
         }
     }
 }
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+

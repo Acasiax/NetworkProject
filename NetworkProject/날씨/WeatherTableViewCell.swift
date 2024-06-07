@@ -19,15 +19,22 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:)에서 오류가 났어용")
+        fatalError("init(coder:)가 구현되지 않아 오류가 났어용")
     }
     
     private func setupUI() {
         contentView.addSubview(descriptionLabel)
-        descriptionLabel.numberOfLines = 0
+        contentView.messageUISetup(backgroundColor: .white, cornerRadius: 8)
+
+        
+       // descriptionLabel.numberOfLines = 0
+        descriptionLabel.chatLbSetup(fontSize: 16)
+      //  descriptionLabel.textColor = .black
         descriptionLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
+            
         }
+        
     }
     
     func configure(description: String) {
@@ -35,3 +42,19 @@ class WeatherTableViewCell: UITableViewCell {
     }
 }
 
+extension UIView {
+    func messageUISetup(backgroundColor: UIColor, cornerRadius: CGFloat) {
+        self.backgroundColor = backgroundColor
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = true
+    }
+}
+
+extension UILabel {
+    func chatLbSetup(fontSize: CGFloat, textColor: UIColor = .black) {
+        self.backgroundColor = .clear
+        self.font = UIFont.systemFont(ofSize: fontSize)
+        self.textColor = textColor
+        self.numberOfLines = 0
+    }
+}
