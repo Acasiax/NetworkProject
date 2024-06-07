@@ -32,6 +32,7 @@ class WeatherTableViewCell: UITableViewCell {
       //  descriptionLabel.textColor = .black
         descriptionLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
+            make.leading.trailing.equalToSuperview().inset(16)
             
         }
         
@@ -39,7 +40,13 @@ class WeatherTableViewCell: UITableViewCell {
     
     func configure(description: String) {
         descriptionLabel.text = description
+        descriptionLabel.sizeToFit()
     }
+    
+    override func layoutSubviews() {
+            super.layoutSubviews()
+            contentView.frame.size.width = descriptionLabel.frame.size.width + 32 // 좌우 패딩 16씩 더해줌
+        }
 }
 
 extension UIView {

@@ -57,8 +57,9 @@ class WeatherHomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.snp.makeConstraints { make in
             make.top.equalTo(currentLocationLabel.snp.bottom).offset(16)
             make.left.right.equalToSuperview().inset(16)
