@@ -29,6 +29,12 @@ class WeatherAPIModels {
     
     func fetchWeatherData(latitude: Double, longitude: Double) {
         AF.request(url, method: .get) { response in
+            guard let url = getURL(latitude: latitude, longitude: longitude) else {
+                  print("URL build fail")
+                 
+                  return
+              }
+            AF.request(url, method: .get).responseJSON { response in
               switch response.result {
               case .success(let value):
                 let code = response.response
