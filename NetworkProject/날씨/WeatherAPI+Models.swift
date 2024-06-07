@@ -27,25 +27,22 @@ class WeatherAPIModels {
         return baseURL?.url
     }
     
-    func fetchWeatherData(latitude: Double, longitude: Double) {
-        AF.request(url, method: .get) { response in
-            guard let url = getURL(latitude: latitude, longitude: longitude) else {
-                  print("URL build fail")
-                 
-                  return
-              }
-            AF.request(url, method: .get).responseJSON { response in
-              switch response.result {
-              case .success(let value):
-                let code = response.response
+    func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Int?, Any?) -> Void) {
+        guard let url = getURL(latitude: latitude, longitude: longitude) else {
+            print("URL build fail")
+            completion(500, nil)
+            return
+        }
+        AF.request(url, method: .get).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let code = response.response?.statusCode
                 completion(code, value)
                 
-              case .failure(let error):
+            case .failure(let error):
                 print(error.localizedDescription)
                 completion(500, nil)
-              }
             }
+        }
     }
-    
-    
 }
