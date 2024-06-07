@@ -11,6 +11,7 @@ import UIKit
 class WeatherTableViewCell: UITableViewCell {
     static let identifier = "WeatherTableViewCell"
     
+    private let containerView = UIView()
     private let descriptionLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -23,17 +24,16 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-        contentView.addSubview(descriptionLabel)
-        contentView.messageUISetup(backgroundColor: .white, cornerRadius: 8)
-
+        contentView.addSubview(containerView)
+        containerView.addSubview(descriptionLabel)
+        containerView.messageUISetup(backgroundColor: .white, cornerRadius: 8)
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(5) // 셀의 상하좌우 여백을 10으로 설정
+        }
         
-       // descriptionLabel.numberOfLines = 0
         descriptionLabel.chatLbSetup(fontSize: 16)
-      //  descriptionLabel.textColor = .black
         descriptionLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            
         }
         
     }
@@ -45,7 +45,7 @@ class WeatherTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
             super.layoutSubviews()
-            contentView.frame.size.width = descriptionLabel.frame.size.width + 32 // 좌우 패딩 16씩 더해줌
+            contentView.frame.size.width = descriptionLabel.frame.size.width + 40 // 좌우 패딩 16씩 더해줌
         }
 }
 
