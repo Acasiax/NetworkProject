@@ -20,7 +20,16 @@ class WeatherHomeViewController: UIViewController {
         setupUI()
         loadData()
         WeatherAPIModels.indentifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) {(statusCode, data) in
-            
+                if statusCode == 200 {
+                    if let weatherData = data {
+                        print("🌐: \(weatherData)")
+                    } else {
+                        print("데이터 못 받아옴")
+                    }
+                } else {
+                    // 상태 코드가 200이 아닌 경우 에러 처리
+                    print("패치가져오는데 실패⚠️: \(statusCode)")
+                }
         }
     }
     
