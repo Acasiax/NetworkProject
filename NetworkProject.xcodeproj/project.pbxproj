@@ -25,6 +25,8 @@
 		AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFCAA2C10A33700797F03 /* Alamofire */; };
 		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
+		AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */; };
+		AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -54,6 +56,8 @@
 		AA2CFCA52C10A2C100797F03 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
+		AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagocheHomeViewController.swift; sourceTree = "<group>"; };
+		AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCHECollectionViewCell.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +101,9 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
-				AAE209762C11F4F7006310B7 /* 날씨 */,
 				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
+				AA5A1FE62C131FE900C237FA /* 다마고치 */,
+				AAE209762C11F4F7006310B7 /* 날씨 */,
 				AAE2093D2C117E12006310B7 /* 영화 */,
 				AA2CFCA22C109F8500797F03 /* 로또 */,
 				AA2CFC8F2C1058F100797F03 /* 넷플릭스 */,
@@ -176,6 +181,16 @@
 				AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */,
 			);
 			path = ext;
+			sourceTree = "<group>";
+		};
+		AA5A1FE62C131FE900C237FA /* 다마고치 */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */,
+				AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */,
+			);
+			name = "다마고치";
+			path = "다마고치";
 			sourceTree = "<group>";
 		};
 		AAE2093D2C117E12006310B7 /* 영화 */ = {
@@ -305,9 +320,11 @@
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */,
+				AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */,
 				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */,
+				AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */,
 				AA2CFC7B2C10580900797F03 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
