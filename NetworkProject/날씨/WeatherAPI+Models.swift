@@ -11,7 +11,7 @@ import SnapKit
 
 class WeatherAPIModels {
     
-    static let indentifier = WeatherAPIModels()
+    static let identifier = WeatherAPIModels()
     init() {}
     private let apiKey = APIKey.weatherKey
     

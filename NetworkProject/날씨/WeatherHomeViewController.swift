@@ -19,9 +19,14 @@ class WeatherHomeViewController: UIViewController {
         
         setupUI()
         loadData()
-        WeatherAPIModels.indentifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) {(statusCode, data) in
+        fetchWeatherData()
+        }
+    private func fetchWeatherData() {
+        WeatherAPIModels.identifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) { (statusCode, data) in
             if statusCode == 200, let data = data as? [String: Any] {
+                // 데이터를 성공적으로 가져온 경우 처리
                 print("🥕Weather data: \(data)")
+                
                 if let main = data["main"] as? [String: Any],
                    let temp = main["temp"] as? Double,
                    let humidity = main["humidity"] as? Int,
@@ -33,19 +38,14 @@ class WeatherHomeViewController: UIViewController {
                         "\(windSpeed)m/s의 바람이 불어요",
                         "오늘도 행복한 하루 보내세요"
                     ]
-                        print("🌐: \(weatherData)")
-                       
-                                                self.tableView.reloadData() // 테이블 뷰 리로드
-                                            
-                    } else {
-                        print("데이터 못 받아옴")
-                    }
-                } else {
-                    // 상태 코드가 200이 아닌 경우 에러 처리
-                    print("패치가져오는데 실패⚠️: \(statusCode)")
+                    self.tableView.reloadData()
                 }
+            } else {
+                // 에러 처리
+                print("Failed to fetch weather data")
+            }
         }
-    }
+      }
     
     private func setupUI() {
         view.backgroundColor = UIColor(red: 0.64, green: 0.82, blue: 1.00, alpha: 1.00)

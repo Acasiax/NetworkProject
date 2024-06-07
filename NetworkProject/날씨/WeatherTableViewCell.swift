@@ -26,21 +26,23 @@ class WeatherTableViewCell: UITableViewCell {
     private func setupUI() {
         contentView.addSubview(containerView)
         containerView.addSubview(descriptionLabel)
+        
         containerView.messageUISetup(backgroundColor: .white, cornerRadius: 8)
-        containerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(5) // 셀의 상하좌우 여백을 10으로 설정
-        }
         
         descriptionLabel.chatLbSetup(fontSize: 16)
         descriptionLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(8)
+                 make.edges.equalToSuperview().inset(8)
+             }
+        containerView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(5)
+                       make.centerX.equalToSuperview()
         }
-        
+    
     }
     
     func configure(description: String) {
         descriptionLabel.text = description
-        descriptionLabel.sizeToFit()
+        layoutIfNeeded()
     }
     
     override func layoutSubviews() {
