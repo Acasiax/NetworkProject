@@ -34,3 +34,4 @@ class WeatherTableViewCell: UITableViewCell {
         descriptionLabel.text = description
     }
 }
+
