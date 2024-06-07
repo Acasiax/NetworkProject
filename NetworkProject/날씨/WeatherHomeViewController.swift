@@ -19,6 +19,9 @@ class WeatherHomeViewController: UIViewController {
         
         setupUI()
         loadData()
+        WeatherAPIModels.indentifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) {(statusCode, data) in
+            
+        }
     }
     
     private func setupUI() {
