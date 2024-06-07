@@ -26,8 +26,21 @@ class WeatherHomeViewController: UIViewController {
         view.addSubview(dateLabel)
         view.addSubview(currentLocationLabel)
         view.addSubview(tableView)
-
-
+        
+        
+        dateLabel.text = "10월 24일 09시 42분"
+        dateLabel.textAlignment = .left
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            make.leading.equalToSuperview().offset(16)
+        }
+        
+        currentLocationLabel.text = "서울, 신림동"
+        currentLocationLabel.textAlignment = .left
+        currentLocationLabel.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom).offset(8)
+            make.leading.equalToSuperview().offset(16)
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
