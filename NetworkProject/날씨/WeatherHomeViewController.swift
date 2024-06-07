@@ -20,9 +20,23 @@ class WeatherHomeViewController: UIViewController {
         setupUI()
         loadData()
         WeatherAPIModels.indentifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) {(statusCode, data) in
-                if statusCode == 200 {
-                    if let weatherData = data {
+            if statusCode == 200, let data = data as? [String: Any] {
+                print("🥕Weather data: \(data)")
+                if let main = data["main"] as? [String: Any],
+                   let temp = main["temp"] as? Double,
+                   let humidity = main["humidity"] as? Int,
+                   let wind = data["wind"] as? [String: Any],
+                   let windSpeed = wind["speed"] as? Double {
+                    self.weatherData = [
+                        "지금은 \(temp)℃ 에요",
+                        "\(humidity)% 만큼 습해요",
+                        "\(windSpeed)m/s의 바람이 불어요",
+                        "오늘도 행복한 하루 보내세요"
+                    ]
                         print("🌐: \(weatherData)")
+                       
+                                                self.tableView.reloadData() // 테이블 뷰 리로드
+                                            
                     } else {
                         print("데이터 못 받아옴")
                     }
@@ -69,9 +83,9 @@ class WeatherHomeViewController: UIViewController {
     
     private func loadData() {
         weatherData = [
-            "지금은 9℃ 에요",
-            "78% 만큼 습해요",
-            "1m/s의 바람이 불어요",
+            "지금은 1℃ 에요",
+            "100% 만큼 습해요",
+            "100m/s의 바람이 불어요",
             "오늘도 행복한 하루 보내세요"
         ]
         tableView.reloadData()
@@ -90,6 +104,7 @@ extension WeatherHomeViewController: UITableViewDelegate, UITableViewDataSource 
                 return UITableViewCell()
             }
             cell.configure(description: data)
+            print("🌱\(data)")
             cell.backgroundColor = .clear
             return cell
         } else {
@@ -98,6 +113,7 @@ extension WeatherHomeViewController: UITableViewDelegate, UITableViewDataSource 
             }
             cell.backgroundColor = .clear
             cell.configure(description: data)
+            print("🔥\(data)")
             cell.selectionStyle = .none
             return cell
         }
