@@ -22,6 +22,20 @@ class WeatherHomeViewController: UIViewController {
     }
     
     private func setupUI() {
+        
+        view.addSubview(dateLabel)
+        view.addSubview(currentLocationLabel)
+        view.addSubview(tableView)
+
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(currentLocationLabel.snp.bottom).offset(16)
+            make.left.right.equalToSuperview().inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func loadData() {
