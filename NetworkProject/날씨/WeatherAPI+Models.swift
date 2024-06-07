@@ -26,4 +26,20 @@ class WeatherAPIModels {
         
         return baseURL?.url
     }
+    
+    func fetchWeatherData(latitude: Double, longitude: Double) {
+        AF.request(url, method: .get) { response in
+              switch response.result {
+              case .success(let value):
+                let code = response.response
+                completion(code, value)
+                
+              case .failure(let error):
+                print(error.localizedDescription)
+                completion(500, nil)
+              }
+            }
+    }
+    
+    
 }
