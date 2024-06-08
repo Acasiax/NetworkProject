@@ -8,28 +8,6 @@
 import UIKit
 import SnapKit
 
-struct BoxOfficeModel {
-    let rank: String
-    let title: String
-    let pubDate: String
-    let movieCd: String
-}
-
-struct BoxOfficeResponse: Codable {
-    let boxOfficeResult: BoxOfficeResult
-}
-
-struct BoxOfficeResult: Codable {
-    let dailyBoxOfficeList: [DailyBoxOffice]
-}
-
-struct DailyBoxOffice: Codable {
-    let rank: String
-    let movieNm: String
-    let openDt: String
-    let movieCd: String
-}
-
 
 
 extension UIButton {

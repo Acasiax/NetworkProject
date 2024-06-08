@@ -7,6 +7,30 @@
 
 import UIKit
 
+struct BoxOfficeModel {
+    let rank: String
+    let title: String
+    let pubDate: String
+    let movieCd: String
+}
+
+struct BoxOfficeResponse: Codable {
+    let boxOfficeResult: BoxOfficeResult
+}
+
+struct BoxOfficeResult: Codable {
+    let dailyBoxOfficeList: [DailyBoxOffice]
+}
+
+struct DailyBoxOffice: Codable {
+    let rank: String
+    let movieNm: String
+    let openDt: String
+    let movieCd: String
+}
+
+
+
 class MovieHomeViewController: UIViewController {
 
     var dayBoxOffice: [BoxOfficeModel] = []

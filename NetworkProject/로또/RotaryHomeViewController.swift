@@ -9,27 +9,30 @@ import UIKit
 import Alamofire
 import SnapKit
 
-class RotaryHomeViewController: UIViewController {
+struct Lotto: Decodable {
+    let drwNoDate: String
+    let drwtNo1: Int
+    let drwtNo2: Int
+    let drwtNo3: Int
+    let drwtNo4: Int
+    let drwtNo5: Int
+    let drwtNo6: Int
+    let bnusNo: Int
+    let returnValue: String
+}
 
-    struct Lotto: Decodable {
-         let drwNoDate: String
-         let drwtNo1: Int
-         let drwtNo2: Int
-         let drwtNo3: Int
-         let drwtNo4: Int
-        let drwtNo5: Int
-        let drwtNo6: Int
-        let bnusNo: Int
-        let returnValue: String
-    }
+class RotaryHomeViewController: UIViewController {
+    
     let numberTextField: UITextField = .createCustomTextField(placeholder: "회차 번호 입력", keyboardType: .numberPad, textAlignment: .center, borderStyle: .roundedRect)
     
-    let checkButton: UIButton = .createCustomButton(title: "결과 확인", target: self, action: #selector(checkButtonClicked))
-    
-    let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
-    let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)
     let drawResultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 1)
+    let infoLabel: UILabel = .createCustomLabel(text: "당첨 번호 안내", textAlignment: .left, numberOfLines: 1)
     let dateLabel: UILabel = .createCustomLabel(text: "추첨 날짜", textAlignment: .right, numberOfLines: 1)
+    let resultLabel: UILabel = .createCustomLabel(textAlignment: .center, numberOfLines: 0)
+    
+    let checkButton: UIButton = .createCustomButton(title: "결과 확인", target: self, action: #selector(checkButtonClicked))
+  
+   
     let separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -60,6 +63,11 @@ class RotaryHomeViewController: UIViewController {
     
     @objc func checkButtonClicked() {
           print(#function)
+        fetchDate()
+   
+      }
+    
+    func fetchDate() {
         guard let drawNumber = numberTextField.text, !drawNumber.isEmpty else {
                    resultLabel.text = "회차 번호를 입력해주세요."
                    return
@@ -70,10 +78,7 @@ class RotaryHomeViewController: UIViewController {
                 case .success(let lotto):
                     if lotto.returnValue == "success" {
 
-                        self.resultLabel.text = """
-                        
-                        보너스 번호: \(lotto.bnusNo)
-                        """
+                        self.resultLabel.text = "보너스 번호: \(lotto.bnusNo)"
                         //🔥🔧 삽질
                         self.dateLabel.text = "\(lotto.drwNoDate) 추첨"
                         self.updateLottoNumbers(lotto: lotto)
@@ -85,30 +90,30 @@ class RotaryHomeViewController: UIViewController {
                     }
                 case .failure(let error):
                     print(error)
-                    self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
+                    self.resultLabel.text = "api 전달이 실패되었습니다."
                 }
             }
-      }
-    
-
+    }
     
     
     func createCircleView() -> UIView {
-           let circleView = UIView()
-           circleView.layer.cornerRadius = 21
-           circleView.backgroundColor = .lightGray
-           
-           let numberLabel = UILabel()
+        let circleView = UIView()
+        circleView.layer.cornerRadius = 21
+        circleView.backgroundColor = .lightGray
+        
+        let numberLabel = UILabel()
         numberLabel.tag = 100
-           numberLabel.textAlignment = .center
-           numberLabel.textColor = .white
-           circleView.addSubview(numberLabel)
-           numberLabel.snp.makeConstraints { make in
-               make.edges.equalToSuperview()
-           }
-           
-           return circleView
-       }
+        numberLabel.textAlignment = .center
+        numberLabel.textColor = .white
+        
+        circleView.addSubview(numberLabel) //📍
+        
+        numberLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        return circleView
+    }
     func setupNumberCircles() {
          for _ in 0..<7 {
              let circleView = createCircleView()

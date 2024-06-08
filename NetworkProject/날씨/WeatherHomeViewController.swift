@@ -16,11 +16,11 @@ class WeatherHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         loadData()
         fetchWeatherData()
         }
+    
     private func fetchWeatherData() {
         WeatherAPIModels.identifier.fetchWeatherData(latitude: 37.5665, longitude: 126.9780) { (statusCode, data) in
             if statusCode == 200, let data = data as? [String: Any] {
