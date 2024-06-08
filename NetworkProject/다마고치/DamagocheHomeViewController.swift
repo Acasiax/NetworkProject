@@ -17,15 +17,18 @@ class DamagocheHomeViewController: UIViewController {
            mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
            super.init(nibName: nil, bundle: nil)
        }
-       
-       required init?(coder: NSCoder) {
-           fatalError("init(coder:)가 오류가 났습니다")
-       }
+    
+    required init?(coder: NSCoder) {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100, height: 100)
+        mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-      
+        
     }
     func configureCollectionView() {
         mainCollectionView.dataSource = self
