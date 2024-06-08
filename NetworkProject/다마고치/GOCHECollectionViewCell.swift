@@ -7,6 +7,9 @@
 
 import UIKit
 
-class GOCHECollectionViewCell: UICollectionViewCell {
-    static let identifier: String = "GOCHECollectionViewCell"
+class DaMaGoCheCollectionViewCell: UICollectionViewCell {
+    static let identifier: String = "DaMaGoCheCollectionViewCell"
+    let gocheImage = UIImageView()
+    let gocheLabel = UILabel()
+
 }
