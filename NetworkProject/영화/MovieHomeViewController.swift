@@ -25,10 +25,10 @@ struct BoxOfficeResult: Codable {
 }
 
 struct DailyBoxOffice: Codable {
-    let rank: String
-    let movieNm: String
-    let openDt: String
-    let movieCd: String
+    let rank: String //해당일자의 박스오피스 순위를 출력합니다.
+    let movieNm: String //영화명(국문)을 출력합니다.
+    let openDt: String //영화의 개봉일을 출력합니다.
+    let movieCd: String //영화의 대표코드를 출력합니다.
 }
 
 
@@ -74,7 +74,7 @@ class MovieHomeViewController: UIViewController {
                             movieCd: receive.movieCd
                         )
                     }
-                    
+                    //🔧
                     DispatchQueue.main.async {
                         self.dayBoxOffice = tempDayBoxOffice
                         self.tableView.reloadData()
@@ -86,8 +86,6 @@ class MovieHomeViewController: UIViewController {
             }
         }
 
-    
-    
     func getURL(data: String) -> URL? {
         var components = APIURL.movieURLComponents
         components.queryItems = [
@@ -97,14 +95,13 @@ class MovieHomeViewController: UIViewController {
         return components.url
     }
     
-
     
     func searchBoxOffice() {
-        guard let dateString = searchField.text, !dateString.isEmpty else {
+        guard let dayString = searchField.text, !dayString.isEmpty else {
             showAlert(message: "날짜를 입력해주세요.")
             return
         }
-        fetchData(queryDate: dateString)
+        fetchData(queryDate: dayString)
     }
     
     func showAlert(message: String) {
@@ -124,7 +121,7 @@ extension MovieHomeViewController: UITableViewDelegate, UITableViewDataSource {
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
            let movie = dayBoxOffice[indexPath.row]
-           cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title) \(movie.movieCd)"
+           cell.textLabel?.text = "\(indexPath.row + 1)  \(movie.title)  \(movie.movieCd)"
            cell.detailTextLabel?.text = movie.pubDate
            cell.backgroundColor = .clear
            cell.textLabel?.textColor = .white

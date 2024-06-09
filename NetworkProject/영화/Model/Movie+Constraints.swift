@@ -2,9 +2,10 @@
 //  Movie+Constraints.swift
 //  NetworkProject
 //
-//  Created by 이윤지 on 6/6/24.
+//  Created by 이윤지 on 6/9/24.
 //
 
+import Foundation
 import UIKit
 import SnapKit
 
@@ -23,7 +24,13 @@ extension UIViewController {
         blackOverlayView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         self.view.addSubview(blackOverlayView)
         
-        view.addSubviews(searchField, searchButton, tableView)
+        view.addSubviews(tableView, searchField, searchButton)
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(searchField.snp.bottom).offset(20)
+            make.left.right.bottom.equalToSuperview()
+        }
+        tableView.backgroundColor = .clear
         
         searchField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
@@ -39,11 +46,7 @@ extension UIViewController {
             make.width.equalTo(80)
         }
         
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(searchField.snp.bottom).offset(20)
-            make.left.right.bottom.equalToSuperview()
-        }
-        tableView.backgroundColor = .clear
+   
     }
     
 }

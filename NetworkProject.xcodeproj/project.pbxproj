@@ -28,11 +28,11 @@
 		AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */; };
 		AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
+		AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20972C159D5300C237FA /* Movie+Constraints.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
 		AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209722C119AC5006310B7 /* Movie+Model.swift */; };
-		AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209742C11A132006310B7 /* Movie+Constraints.swift */; };
 		AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209772C11F51B006310B7 /* WeatherHomeViewController.swift */; };
 		AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2097E2C11FAF6006310B7 /* WeatherTableViewCell.swift */; };
 		AAE209812C11FAF6006310B7 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE2097F2C11FAF6006310B7 /* WeatherTableViewCell.xib */; };
@@ -60,11 +60,11 @@
 		AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagocheHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCHECollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
+		AA5A20972C159D5300C237FA /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
 		AAE209722C119AC5006310B7 /* Movie+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Model.swift"; sourceTree = "<group>"; };
-		AAE209742C11A132006310B7 /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
 		AAE209772C11F51B006310B7 /* WeatherHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewController.swift; sourceTree = "<group>"; };
 		AAE2097E2C11FAF6006310B7 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		AAE2097F2C11FAF6006310B7 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE209722C119AC5006310B7 /* Movie+Model.swift */,
-				AAE209742C11A132006310B7 /* Movie+Constraints.swift */,
+				AA5A20972C159D5300C237FA /* Movie+Constraints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,10 +340,10 @@
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */,
-				AAE209752C11A132006310B7 /* Movie+Constraints.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
 				AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */,
+				AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
