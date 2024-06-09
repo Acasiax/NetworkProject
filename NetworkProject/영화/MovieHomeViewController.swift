@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SnapKit
 
 struct BoxOfficeModel {
     let rank: String
@@ -55,53 +57,42 @@ class MovieHomeViewController: UIViewController {
         searchBoxOffice()
     }
     
-    func fetchcData(queryDate: String) {
-        guard let url = getURL(date: queryDate) else {
-            fatalError("URL 생성에 실패했습니다.")
+    func fetchData(queryDate: String) {
+            guard let url = getURL(data: queryDate) else {
+                fatalError("URL 생성에 실패했습니다.")
+            }
+        
+            AF.request(url).responseDecodable(of: BoxOfficeResponse.self) { response in
+                switch response.result {
+                case .success(let value):
+                    print("JSON: \(value)")
+                    let tempDayBoxOffice = value.boxOfficeResult.dailyBoxOfficeList.map { receive in
+                        BoxOfficeModel(
+                            rank: receive.rank,
+                            title: receive.movieNm,
+                            pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt,
+                            movieCd: receive.movieCd
+                        )
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.dayBoxOffice = tempDayBoxOffice
+                        self.tableView.reloadData()
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("데이터가 응답 하지 않네용..")
-                return
-            }
-            // 디버깅용 데이터 출력
-                   if let jsonString = String(data: data, encoding: .utf8) {
-                       print("📍받은 데이터: \(jsonString)")
-                   }
-            
-            do {
-                let decoder = JSONDecoder()
-                let boxOfficeResponse = try decoder.decode(BoxOfficeResponse.self, from: data)
-                let tempDayBoxOffice = boxOfficeResponse.boxOfficeResult.dailyBoxOfficeList.map { receive in
-                    BoxOfficeModel(
-                        rank: receive.rank,
-                        title: receive.movieNm,
-                        pubDate: receive.openDt.count < 10 ? "미개봉" : receive.openDt, movieCd: receive.movieCd
-                    )
-                }
-                
-                DispatchQueue.main.async {
-                    self.dayBoxOffice = tempDayBoxOffice
-                    self.tableView.reloadData()
-                           }
-                       } catch {
-                           print("JSON parsing error: \(error.localizedDescription)")
-                       }
-                   }.resume()
-               }
-
     
     
-    func getURL(date: String) -> URL? {
+    func getURL(data: String) -> URL? {
         var components = APIURL.movieURLComponents
         components.queryItems = [
             URLQueryItem(name: "key", value: APIKey.movieKey),
-            URLQueryItem(name: "targetDt", value: date)
+            URLQueryItem(name: "targetDt", value: data)
         ]
         return components.url
     }
@@ -113,7 +104,7 @@ class MovieHomeViewController: UIViewController {
             showAlert(message: "날짜를 입력해주세요.")
             return
         }
-        fetchcData(queryDate: dateString)
+        fetchData(queryDate: dateString)
     }
     
     func showAlert(message: String) {

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 extension UIButton {
-    func styleSettingUP() {
+    func NomalButtonSetup() {
         self.backgroundColor = .green
         self.layer.cornerRadius = 10
         self.setTitleColor(.white, for: .normal)
@@ -19,7 +19,7 @@ extension UIButton {
     static func makeSearchButton(target: Any, action: Selector) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle("검색", for: .normal)
-        button.styleSettingUP()
+        button.NomalButtonSetup()
         button.addTarget(target, action: action, for: .touchUpInside)
         return button
     }
@@ -48,7 +48,8 @@ extension UITableView {
         return tableView
     }
 }
-
+//가변 매개변수 - 함수가 여러 개의 매개변수를 배열 형태
+//가변 매개변수는 함수나 메서드를 호출할 때 원하는 만큼 인수를 전달
 extension UIView {
     func addSubviews(_ views: UIView...) {
         for view in views {

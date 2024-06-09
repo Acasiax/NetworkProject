@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class WeatherTableViewCell: UITableViewCell {
     static let identifier = "WeatherTableViewCell"
     
