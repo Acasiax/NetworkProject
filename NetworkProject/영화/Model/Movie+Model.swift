@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 
-
-
 extension UIButton {
     func styleSettingUP() {
         self.backgroundColor = .green

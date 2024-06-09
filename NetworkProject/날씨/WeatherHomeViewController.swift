@@ -53,7 +53,6 @@ class WeatherHomeViewController: UIViewController {
         view.addSubview(currentLocationLabel)
         view.addSubview(tableView)
         
-        
         dateLabel.text = "10월 24일 09시 42분"
         dateLabel.textAlignment = .left
         dateLabel.snp.makeConstraints { make in

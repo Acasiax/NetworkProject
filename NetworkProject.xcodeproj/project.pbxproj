@@ -28,7 +28,6 @@
 		AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */; };
 		AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
-		AA5A202C2C13F58B00C237FA /* SnapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A202B2C13F58B00C237FA /* SnapKitViewController.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -61,7 +60,6 @@
 		AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagocheHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCHECollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
-		AA5A202B2C13F58B00C237FA /* SnapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapKitViewController.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
-				AA5A202A2C13F55600C237FA /* 스냅킷정리 */,
 				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 				AA5A1FE62C131FE900C237FA /* 다마고치 */,
 				AAE209762C11F4F7006310B7 /* 날씨 */,
@@ -221,15 +218,6 @@
 				AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		AA5A202A2C13F55600C237FA /* 스냅킷정리 */ = {
-			isa = PBXGroup;
-			children = (
-				AA5A202B2C13F58B00C237FA /* SnapKitViewController.swift */,
-			);
-			name = "스냅킷정리";
-			path = "스냅킷연습";
 			sourceTree = "<group>";
 		};
 		AAE2093D2C117E12006310B7 /* 영화 */ = {
@@ -348,7 +336,6 @@
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
-				AA5A202C2C13F58B00C237FA /* SnapKitViewController.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,

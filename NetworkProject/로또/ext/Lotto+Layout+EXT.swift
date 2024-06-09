@@ -18,9 +18,7 @@ extension RotaryHomeViewController {
         view.addSubview(dateLabel)
         view.addSubview(drawResultLabel)
         view.addSubview(separatorView)
-        
-        
-        
+
         numberTextField.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.centerX.equalToSuperview()

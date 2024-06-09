@@ -31,13 +31,13 @@ class WeatherTableViewCell: UITableViewCell {
         
         descriptionLabel.chatLbSetup(fontSize: 16)
         descriptionLabel.snp.makeConstraints { make in
-                 make.edges.equalToSuperview().inset(8)
-             }
+            make.edges.equalToSuperview().inset(8)
+        }
         containerView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(5)
-                       make.centerX.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
-    
+        
     }
     
     func configure(description: String) {
@@ -46,9 +46,9 @@ class WeatherTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-            super.layoutSubviews()
-            contentView.frame.size.width = descriptionLabel.frame.size.width + 40 // 좌우 패딩 16씩 더해줌
-        }
+        super.layoutSubviews()
+        contentView.frame.size.width = descriptionLabel.frame.size.width + 40 // 좌우 패딩 16씩 더해줌
+    }
 }
 
 extension UIView {
