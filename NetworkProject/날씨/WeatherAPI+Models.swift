@@ -21,7 +21,7 @@ class WeatherAPIModels {
         let longitudeQuery = URLQueryItem(name: "lon", value: String(longitude))
         let lang = URLQueryItem(name: "lang", value: "kr")
         let units = URLQueryItem(name: "units", value: "metric")
-        let apiKeyQuery = URLQueryItem(name: "appid", value: apiKey)
+        let apiKeyQuery = URLQueryItem(name: "appid", value: apiKey) //고유한 API 키
         baseURL?.queryItems = [latitudeQuery, longitudeQuery, lang, units, apiKeyQuery]
         
         return baseURL?.url
