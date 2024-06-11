@@ -21,7 +21,6 @@
 		AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */; };
 		AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */; };
 		AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */; };
-		AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCA52C10A2C100797F03 /* APIKey.swift */; };
 		AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFCAA2C10A33700797F03 /* Alamofire */; };
 		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
@@ -29,6 +28,8 @@
 		AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
 		AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20972C159D5300C237FA /* Movie+Constraints.swift */; };
+		AA5A20DE2C187E1500C237FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5A20DD2C187E1500C237FA /* .gitignore */; };
+		AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20DF2C187E2F00C237FA /* APIKey.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -54,13 +55,14 @@
 		AA2CFC9E2C108D8300797F03 /* AddUIView+Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddUIView+Signup.swift"; sourceTree = "<group>"; };
 		AA2CFCA02C1093DB00797F03 /* Signup+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Signup+Constraints.swift"; sourceTree = "<group>"; };
 		AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryHomeViewController.swift; sourceTree = "<group>"; };
-		AA2CFCA52C10A2C100797F03 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
 		AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagocheHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCHECollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
 		AA5A20972C159D5300C237FA /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
+		AA5A20DD2C187E1500C237FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AA5A20DF2C187E2F00C237FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		AA2CFC6C2C10580900797F03 = {
 			isa = PBXGroup;
 			children = (
+				AA5A20DD2C187E1500C237FA /* .gitignore */,
 				AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */,
 				AA2CFC772C10580900797F03 /* NetworkProject */,
 				AA2CFC762C10580900797F03 /* Products */,
@@ -103,7 +106,6 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
-				AA2CFCA52C10A2C100797F03 /* APIKey.swift */,
 				AA5A1FE62C131FE900C237FA /* 다마고치 */,
 				AAE209762C11F4F7006310B7 /* 날씨 */,
 				AAE2093D2C117E12006310B7 /* 영화 */,
@@ -123,6 +125,7 @@
 		AA2CFC8F2C1058F100797F03 /* 넷플릭스 */ = {
 			isa = PBXGroup;
 			children = (
+				AA5A20DF2C187E2F00C237FA /* APIKey.swift */,
 				AA2CFC9D2C108D4200797F03 /* Singup+EXT */,
 				AA2CFC942C105D6100797F03 /* NetfliexHome+EXT */,
 				AA2CFC932C105D5900797F03 /* Model */,
@@ -321,6 +324,7 @@
 				AA2CFC822C10580B00797F03 /* Assets.xcassets in Resources */,
 				AAE209812C11FAF6006310B7 /* WeatherTableViewCell.xib in Resources */,
 				AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */,
+				AA5A20DE2C187E1500C237FA /* .gitignore in Resources */,
 				AA2CFC802C10580900797F03 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,11 +342,11 @@
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
+				AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
 				AA2CFC912C10593400797F03 /* NetfliexHomeViewController.swift in Sources */,
-				AA2CFCA62C10A2C100797F03 /* APIKey.swift in Sources */,
 				AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */,
 				AA2CFC7D2C10580900797F03 /* ViewController.swift in Sources */,
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
