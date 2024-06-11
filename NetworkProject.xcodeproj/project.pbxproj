@@ -32,6 +32,9 @@
 		AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20DF2C187E2F00C237FA /* APIKey.swift */; };
 		AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */; };
 		AA5A217E2C1895CE00C237FA /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A217D2C1895CE00C237FA /* TMDB.swift */; };
+		AA5A21802C1898F200C237FA /* TrendMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A217F2C1898F200C237FA /* TrendMovie.swift */; };
+		AA5A21852C18995300C237FA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AA5A21842C18995300C237FA /* Kingfisher */; };
+		AA5A21872C189A6100C237FA /* TrendingMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -67,6 +70,8 @@
 		AA5A20DF2C187E2F00C237FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendeHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A217D2C1895CE00C237FA /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
+		AA5A217F2C1898F200C237FA /* TrendMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovie.swift; sourceTree = "<group>"; };
+		AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovieTableViewCell.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5A21852C18995300C237FA /* Kingfisher in Frameworks */,
 				AA2CFC8E2C10587C00797F03 /* SnapKit in Frameworks */,
 				AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */,
 			);
@@ -233,6 +239,7 @@
 			children = (
 				AA5A217C2C1895AE00C237FA /* TMDB모델 */,
 				AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */,
+				AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */,
 			);
 			name = "트렌드";
 			path = "트렌드";
@@ -242,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5A217D2C1895CE00C237FA /* TMDB.swift */,
+				AA5A217F2C1898F200C237FA /* TrendMovie.swift */,
 			);
 			name = "TMDB모델";
 			path = "모델";
@@ -297,6 +305,7 @@
 			packageProductDependencies = (
 				AA2CFC8D2C10587C00797F03 /* SnapKit */,
 				AA2CFCAA2C10A33700797F03 /* Alamofire */,
+				AA5A21842C18995300C237FA /* Kingfisher */,
 			);
 			productName = NetworkProject;
 			productReference = AA2CFC752C10580900797F03 /* NetworkProject.app */;
@@ -329,6 +338,7 @@
 			packageReferences = (
 				AA2CFC8C2C10587C00797F03 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				AA2CFCA92C10A33700797F03 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AA5A21832C18995300C237FA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = AA2CFC762C10580900797F03 /* Products */;
 			projectDirPath = "";
@@ -360,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5A21802C1898F200C237FA /* TrendMovie.swift in Sources */,
 				AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */,
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
@@ -369,6 +380,7 @@
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */,
 				AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */,
+				AA5A21872C189A6100C237FA /* TrendingMovieTableViewCell.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */,
 				AA2CFC9F2C108D8300797F03 /* AddUIView+Signup.swift in Sources */,
@@ -630,6 +642,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		AA5A21832C18995300C237FA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -642,6 +662,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA2CFCA92C10A33700797F03 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		AA5A21842C18995300C237FA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA5A21832C18995300C237FA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
