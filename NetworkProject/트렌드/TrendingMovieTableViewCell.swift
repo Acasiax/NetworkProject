@@ -9,28 +9,8 @@ import UIKit
 import Kingfisher
 import SnapKit
 
-struct CustomStyle {
-    static let cornerRadius = CGFloat(10)
-    
-    static func createBorder(_ color: UIColor) -> UIView {
-        let borderView = UIView()
-        borderView.backgroundColor = color
-        return borderView
-    }
-    
-    static func createLabel(withText text: String = "", fontSize: CGFloat, textColor: UIColor = .black, fontWeight: UIFont.Weight = .regular) -> UILabel {
-        let label = UILabel()
-        label.text = text
-        label.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
-        label.textColor = textColor
-        return label
-    }
-}
-
-
-
 class TrendingMovieTableViewCell: UITableViewCell {
-    static let identifier = "TrendingMovieTableViewCell"
+    //static let identifier = "TrendingMovieTableViewCell"
     
     let releaseDateLabel = CustomStyle.createLabel(withText: "개봉일", fontSize: 13, textColor: .lightGray)
     let genreLabel = CustomStyle.createLabel(withText: "#장르", fontSize: 16, fontWeight: .bold)
@@ -102,6 +82,46 @@ class TrendingMovieTableViewCell: UITableViewCell {
         [ratingTitleLabel, ratingValueLabel].forEach { ratingStackView.addArrangedSubview($0) }
     }
     
+    
+    private func configureLayout() {
+        self.selectionStyle = .none
+        [ratingTitleLabel, ratingValueLabel].forEach { label in
+            label.textAlignment = .center
+        }
+        ratingTitleLabel.backgroundColor = .systemTeal
+        ratingValueLabel.backgroundColor = .white
+    }
+    
+    func configureCell(with movie: Movie, genreDictionary: [Int: String]) {
+        releaseDateLabel.text = movie.release_date
+        ratingValueLabel.text = String(format: "%.1f", movie.vote_average)
+        
+        if let posterPath = movie.poster_path {
+            TMDB.imagePath = posterPath
+            posterImageView.kf.setImage(with: TMDB.movieImageUrl)
+        }
+        
+        titleLabel.text = movie.title
+        descriptionLabel.text = movie.overview
+        
+        var genreText = ""
+        let genres = movie.genre_ids?.compactMap { $0 }
+        genres?.forEach {
+            if let genre = genreDictionary[$0] {
+                genreText += "#\(genre) "
+            }
+        }
+        genreLabel.text = genreText
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+
+extension TrendingMovieTableViewCell {
     func setupConstraints() {
         releaseDateLabel.snp.makeConstraints {
             $0.top.equalTo(contentView.safeAreaLayoutGuide).offset(20)
@@ -159,39 +179,5 @@ class TrendingMovieTableViewCell: UITableViewCell {
             $0.trailing.equalTo(movieCardView).inset(15)
         }
     }
-    
-    private func configureLayout() {
-        self.selectionStyle = .none
-        [ratingTitleLabel, ratingValueLabel].forEach { label in
-            label.textAlignment = .center
-        }
-        ratingTitleLabel.backgroundColor = .systemTeal
-        ratingValueLabel.backgroundColor = .white
-    }
-    
-    func configureCell(with movie: Movie, genreDictionary: [Int: String]) {
-        releaseDateLabel.text = movie.release_date
-        ratingValueLabel.text = String(format: "%.1f", movie.vote_average)
-        
-        if let posterPath = movie.poster_path {
-            TMDB.imagePath = posterPath
-            posterImageView.kf.setImage(with: TMDB.movieImageUrl)
-        }
-        
-        titleLabel.text = movie.title
-        descriptionLabel.text = movie.overview
-        
-        var genreText = ""
-        let genres = movie.genre_ids?.compactMap { $0 }
-        genres?.forEach {
-            if let genre = genreDictionary[$0] {
-                genreText += "#\(genre) "
-            }
-        }
-        genreLabel.text = genreText
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
+

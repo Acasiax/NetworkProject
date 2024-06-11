@@ -31,10 +31,10 @@
 		AA5A20DE2C187E1500C237FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5A20DD2C187E1500C237FA /* .gitignore */; };
 		AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20DF2C187E2F00C237FA /* APIKey.swift */; };
 		AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */; };
-		AA5A217E2C1895CE00C237FA /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A217D2C1895CE00C237FA /* TMDB.swift */; };
-		AA5A21802C1898F200C237FA /* TrendMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A217F2C1898F200C237FA /* TrendMovie.swift */; };
 		AA5A21852C18995300C237FA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AA5A21842C18995300C237FA /* Kingfisher */; };
 		AA5A21872C189A6100C237FA /* TrendingMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */; };
+		AA5A21892C189FF200C237FA /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A21882C189FF200C237FA /* TMDB.swift */; };
+		AA5A218D2C18A1A800C237FA /* TrendMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A218C2C18A1A800C237FA /* TrendMovie.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -69,9 +69,9 @@
 		AA5A20DD2C187E1500C237FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AA5A20DF2C187E2F00C237FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendeHomeViewController.swift; sourceTree = "<group>"; };
-		AA5A217D2C1895CE00C237FA /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
-		AA5A217F2C1898F200C237FA /* TrendMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovie.swift; sourceTree = "<group>"; };
 		AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovieTableViewCell.swift; sourceTree = "<group>"; };
+		AA5A21882C189FF200C237FA /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
+		AA5A218C2C18A1A800C237FA /* TrendMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovie.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				AA5A20DF2C187E2F00C237FA /* APIKey.swift */,
+				AA5A21882C189FF200C237FA /* TMDB.swift */,
+				AA5A218C2C18A1A800C237FA /* TrendMovie.swift */,
 				AA5A20E12C187EF000C237FA /* 트렌드 */,
 				AA5A1FE62C131FE900C237FA /* 다마고치 */,
 				AAE209762C11F4F7006310B7 /* 날씨 */,
@@ -248,8 +250,6 @@
 		AA5A217C2C1895AE00C237FA /* TMDB모델 */ = {
 			isa = PBXGroup;
 			children = (
-				AA5A217D2C1895CE00C237FA /* TMDB.swift */,
-				AA5A217F2C1898F200C237FA /* TrendMovie.swift */,
 			);
 			name = "TMDB모델";
 			path = "모델";
@@ -370,12 +370,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5A21802C1898F200C237FA /* TrendMovie.swift in Sources */,
 				AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */,
+				AA5A21892C189FF200C237FA /* TMDB.swift in Sources */,
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
-				AA5A217E2C1895CE00C237FA /* TMDB.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */,
@@ -391,6 +390,7 @@
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */,
 				AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */,
+				AA5A218D2C18A1A800C237FA /* TrendMovie.swift in Sources */,
 				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */,

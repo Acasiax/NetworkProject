@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SnapKit
 
-class TrendViewController: UIViewController {
+class TrendeHomeViewController: UIViewController {
     
     var trendData: [Movie] = []
     var genres: [Int: String] = [:]
@@ -103,7 +103,7 @@ class TrendViewController: UIViewController {
     }
 }
 
-extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
+extension TrendeHomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         trendData.count

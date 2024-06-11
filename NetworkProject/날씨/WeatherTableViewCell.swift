@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
-    static let identifier = "WeatherTableViewCell"
+   // static let identifier = "WeatherTableViewCell"
     
     private let containerView = UIView()
     private let descriptionLabel = UILabel()
