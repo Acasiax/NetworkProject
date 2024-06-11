@@ -30,6 +30,8 @@
 		AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20972C159D5300C237FA /* Movie+Constraints.swift */; };
 		AA5A20DE2C187E1500C237FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AA5A20DD2C187E1500C237FA /* .gitignore */; };
 		AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20DF2C187E2F00C237FA /* APIKey.swift */; };
+		AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */; };
+		AA5A217E2C1895CE00C237FA /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A217D2C1895CE00C237FA /* TMDB.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -63,6 +65,8 @@
 		AA5A20972C159D5300C237FA /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
 		AA5A20DD2C187E1500C237FA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AA5A20DF2C187E2F00C237FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendeHomeViewController.swift; sourceTree = "<group>"; };
+		AA5A217D2C1895CE00C237FA /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		AA2CFC772C10580900797F03 /* NetworkProject */ = {
 			isa = PBXGroup;
 			children = (
+				AA5A20DF2C187E2F00C237FA /* APIKey.swift */,
+				AA5A20E12C187EF000C237FA /* 트렌드 */,
 				AA5A1FE62C131FE900C237FA /* 다마고치 */,
 				AAE209762C11F4F7006310B7 /* 날씨 */,
 				AAE2093D2C117E12006310B7 /* 영화 */,
@@ -125,7 +131,6 @@
 		AA2CFC8F2C1058F100797F03 /* 넷플릭스 */ = {
 			isa = PBXGroup;
 			children = (
-				AA5A20DF2C187E2F00C237FA /* APIKey.swift */,
 				AA2CFC9D2C108D4200797F03 /* Singup+EXT */,
 				AA2CFC942C105D6100797F03 /* NetfliexHome+EXT */,
 				AA2CFC932C105D5900797F03 /* Model */,
@@ -221,6 +226,25 @@
 				AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AA5A20E12C187EF000C237FA /* 트렌드 */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A217C2C1895AE00C237FA /* TMDB모델 */,
+				AA5A20E22C187F9500C237FA /* TrendeHomeViewController.swift */,
+			);
+			name = "트렌드";
+			path = "트렌드";
+			sourceTree = "<group>";
+		};
+		AA5A217C2C1895AE00C237FA /* TMDB모델 */ = {
+			isa = PBXGroup;
+			children = (
+				AA5A217D2C1895CE00C237FA /* TMDB.swift */,
+			);
+			name = "TMDB모델";
+			path = "모델";
 			sourceTree = "<group>";
 		};
 		AAE2093D2C117E12006310B7 /* 영화 */ = {
@@ -340,8 +364,10 @@
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
+				AA5A217E2C1895CE00C237FA /* TMDB.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
+				AA5A20E32C187F9500C237FA /* TrendeHomeViewController.swift in Sources */,
 				AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
 				AAE209802C11FAF6006310B7 /* WeatherTableViewCell.swift in Sources */,

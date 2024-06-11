@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Vk-2D-n2z">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -185,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1110.6870229007634" y="2195.7746478873241"/>
         </scene>
-        <!--Damagoche Home View Controller-->
+        <!--Trende Home View Controller-->
         <scene sceneID="nWX-32-xkA">
             <objects>
-                <viewController id="EsG-I4-wbZ" customClass="DamagocheHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EsG-I4-wbZ" customClass="TrendeHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oS-rW-qQq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,11 +202,11 @@
             </objects>
             <point key="canvasLocation" x="2081.679389312977" y="2930.9859154929577"/>
         </scene>
-        <!--다마고치-->
+        <!--트렌드-->
         <scene sceneID="L22-Jr-1hx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FRX-zu-WhW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="다마고치" image="teddybear.fill" catalog="system" id="NPE-V8-qUc"/>
+                    <tabBarItem key="tabBarItem" title="트렌드" image="teddybear.fill" catalog="system" id="NPE-V8-qUc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5L7-33-onN">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
