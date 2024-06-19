@@ -31,13 +31,15 @@ class WeatherHomeViewController: UIViewController {
                    let temp = main["temp"] as? Double,
                    let humidity = main["humidity"] as? Int,
                    let wind = data["wind"] as? [String: Any],
-                   let windSpeed = wind["speed"] as? Double {
+                   let windSpeed = wind["speed"] as? Double,
+                   let cityName = data["name"] as? String {
                     self.weatherData = [
                         "지금은 \(temp)℃ 에요",
                         "\(humidity)% 만큼 습해요",
                         "\(windSpeed)m/s의 바람이 불어요",
                         "오늘도 행복한 하루 보내세요"
                     ]
+                    self.currentLocationLabel.text = cityName
                     self.tableView.reloadData()
                 }
             } else {
@@ -53,7 +55,11 @@ class WeatherHomeViewController: UIViewController {
         view.addSubview(currentLocationLabel)
         view.addSubview(tableView)
         
-        dateLabel.text = "10월 24일 09시 42분"
+        // 현재 시간 설정
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM월 dd일 HH시 mm분"
+        let currentDate = Date()
+        dateLabel.text = dateFormatter.string(from: currentDate)
         dateLabel.textAlignment = .left
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
