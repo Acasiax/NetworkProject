@@ -46,7 +46,7 @@ class WeatherTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame.size.width = descriptionLabel.frame.size.width + 40 // 좌우 패딩 16씩 더해줌
+        contentView.frame.size.width = descriptionLabel.frame.size.width + 40 
     }
 }
 

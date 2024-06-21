@@ -69,30 +69,33 @@ class RotaryHomeViewController: UIViewController {
     
     func fetchDate() {
         guard let drawNumber = numberTextField.text, !drawNumber.isEmpty else {
-                   resultLabel.text = "회차 번호를 입력해주세요."
-                   return
-               }
-        let url = "\(APIURL.lottoURL)\(numberTextField.text!)"
-        AF.request(url).responseDecodable(of: Lotto.self) { response in
-                switch response.result {
-                case .success(let lotto):
-                    if lotto.returnValue == "success" {
-
-                        self.resultLabel.text = "보너스 번호: \(lotto.bnusNo)"
-                        //🔥🔧 삽질
-                        self.dateLabel.text = "\(lotto.drwNoDate) 추첨"
-                        self.updateLottoNumbers(lotto: lotto)
-                       // self.drawNumbers.textColor = .orange
-                        self.drawResultLabel.text = "\(drawNumber)회 당첨결과"
-                        self.drawResultLabel.font = .systemFont(ofSize: 22)
-                    } else {
-                        self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
+            resultLabel.text = "회차 번호를 입력해주세요."
+            return
+        }
+        let url = "\(APIURL.lottoURL)\(drawNumber)"
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            AF.request(url).responseDecodable(of: Lotto.self) { response in
+                DispatchQueue.main.async {
+                    switch response.result {
+                    case .success(let lotto):
+                        if lotto.returnValue == "success" {
+                            
+                            self.resultLabel.text = "보너스 번호: \(lotto.bnusNo)"
+                            self.dateLabel.text = "\(lotto.drwNoDate) 추첨"
+                            self.updateLottoNumbers(lotto: lotto)
+                            self.drawResultLabel.text = "\(drawNumber)회 당첨결과"
+                            self.drawResultLabel.font = .systemFont(ofSize: 22)
+                        } else {
+                            self.resultLabel.text = "데이터를 불러오는데 실패했습니다."
+                        }
+                    case .failure(let error):
+                        print(error)
+                        self.resultLabel.text = "api 전달이 실패되었습니다."
                     }
-                case .failure(let error):
-                    print(error)
-                    self.resultLabel.text = "api 전달이 실패되었습니다."
                 }
             }
+        }
     }
     
     
