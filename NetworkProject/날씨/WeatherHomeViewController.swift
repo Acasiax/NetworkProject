@@ -33,13 +33,17 @@ class WeatherHomeViewController: UIViewController {
                    let wind = data["wind"] as? [String: Any],
                    let windSpeed = wind["speed"] as? Double,
                    let cityName = data["name"] as? String {
+                    
+                    let displayCityName = cityName == "Seoul" ? "서울" : cityName
+                    
                     self.weatherData = [
                         "지금은 \(temp)℃ 에요",
                         "\(humidity)% 만큼 습해요",
                         "\(windSpeed)m/s의 바람이 불어요",
                         "오늘도 행복한 하루 보내세요"
                     ]
-                    self.currentLocationLabel.text = cityName
+                  //self.currentLocationLabel.text = cityName
+                    self.currentLocationLabel.text = displayCityName
                     self.tableView.reloadData()
                 }
             } else {
