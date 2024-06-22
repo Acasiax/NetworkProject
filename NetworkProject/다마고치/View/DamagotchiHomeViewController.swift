@@ -77,8 +77,8 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DamagotchiCollectionViewCell.shared.reuseIdentifier, for: indexPath) as! DamagotchiCollectionViewCell
-        let tamagotchi = Damagotchi.allInstances[indexPath.row]
-        configureCell(cell, with: tamagotchi)
+        let damagotchi = Damagotchi.createDamagotchis()[indexPath.row]
+        configureCell(cell, with: damagotchi)
         return cell
     }
     
@@ -91,8 +91,7 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let damagotchi = Damagotchi.allInstances[indexPath.row]
-            //.//showAlert(title: damagotchi.title, message: damagotchi.description)
+        let damagotchi = Damagotchi.createDamagotchis()[indexPath.row]
         showCustomAlert(image: UIImage(named: damagotchi.imageName ?? "준비중"), title: damagotchi.title, message: damagotchi.description)
     }
     
