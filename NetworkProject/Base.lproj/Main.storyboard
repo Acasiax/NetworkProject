@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="2081.679389312977" y="2930.9859154929577"/>
         </scene>
-        <!--View Controller-->
+        <!--Damagotchi Home View Controller-->
         <scene sceneID="8O7-g7-nW6">
             <objects>
-                <viewController id="4Iv-MU-JfO" sceneMemberID="viewController">
+                <viewController id="4Iv-MU-JfO" customClass="DamagotchiHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qcX-94-5W9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

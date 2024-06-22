@@ -27,6 +27,8 @@ class DamagotchiHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupViews()
+        applyLayoutConstraints()
       
     }
     
@@ -41,17 +43,31 @@ class DamagotchiHomeViewController: UIViewController {
         collectionViewLayout.minimumLineSpacing = 2
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
         collectionView.collectionViewLayout = collectionViewLayout
+        collectionView.register(DamagotchiCollectionViewCell.self, forCellWithReuseIdentifier: DamagotchiCollectionViewCell.shared.reuseIdentifier)
+
        
     }
     func setupViews() {
-        headerLabel.text = "타마고치 선택하기"
+        view.backgroundColor = .white
+        headerLabel.text = "다마고치 선택하기"
         headerLabel.textAlignment = .center
         view.addSubview(headerLabel)
         view.addSubview(collectionView)
-        view.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-        collectionView.backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
-    }
 
+    }
+    func applyLayoutConstraints() {
+        headerLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            make.centerX.equalTo(view)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(headerLabel.snp.bottom).offset(16)
+            make.leading.equalTo(view).offset(10)
+            make.trailing.equalTo(view).offset(-10)
+            make.bottom.equalTo(view).offset(-10)
+        }
+    }
 }
 
 extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -74,5 +90,14 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
         cell.titleLabel.textAlignment = .center
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let damagotchi = Damagotchi.allInstances[indexPath.row]
+        showAlert(title: damagotchi.title, message: damagotchi.description)
+    }
     
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
