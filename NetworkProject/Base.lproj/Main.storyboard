@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Vk-2D-n2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Vk-2D-n2z">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,6 +75,7 @@
                         <segue destination="jg9-Mi-EXG" kind="relationship" relationship="viewControllers" id="1LE-Bq-j5Q"/>
                         <segue destination="Wai-C3-iks" kind="relationship" relationship="viewControllers" id="d72-4O-fNC"/>
                         <segue destination="FRX-zu-WhW" kind="relationship" relationship="viewControllers" id="NpZ-I7-tzh"/>
+                        <segue destination="w6q-jR-xHx" kind="relationship" relationship="viewControllers" id="jRl-rk-vfl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57e-cO-yag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,6 +203,22 @@
             </objects>
             <point key="canvasLocation" x="2081.679389312977" y="2930.9859154929577"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8O7-g7-nW6">
+            <objects>
+                <viewController id="4Iv-MU-JfO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qcX-94-5W9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gof-OI-cZn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v3R-oI-qi5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkm-nJ-gHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112" y="3670"/>
+        </scene>
         <!--트렌드-->
         <scene sceneID="L22-Jr-1hx">
             <objects>
@@ -221,6 +238,25 @@
             </objects>
             <point key="canvasLocation" x="1154.9618320610687" y="2930.9859154929577"/>
         </scene>
+        <!--다마-->
+        <scene sceneID="MOg-6b-tsT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w6q-jR-xHx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="다마" image="tortoise.fill" catalog="system" id="VTr-jQ-pbM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J3b-Lf-PYa">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Iv-MU-JfO" kind="relationship" relationship="rootViewController" id="SCJ-sa-4LQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Si4-4U-tBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039" y="3689"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
@@ -228,6 +264,7 @@
         <image name="popcorn" catalog="system" width="103" height="128"/>
         <image name="sun.max.fill" catalog="system" width="128" height="125"/>
         <image name="teddybear.fill" catalog="system" width="126" height="128"/>
+        <image name="tortoise.fill" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

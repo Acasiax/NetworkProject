@@ -24,7 +24,6 @@
 		AA2CFCAB2C10A33700797F03 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AA2CFCAA2C10A33700797F03 /* Alamofire */; };
 		AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
-		AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */; };
 		AA5A20242C13262D00C237FA /* GOCHECollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
 		AA5A20982C159D5300C237FA /* Movie+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20972C159D5300C237FA /* Movie+Constraints.swift */; };
@@ -62,7 +61,6 @@
 		AA2CFCA32C109FC200797F03 /* RotaryHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryHomeViewController.swift; sourceTree = "<group>"; };
 		AA2CFCAD2C113A6400797F03 /* Lotto+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+EXT.swift"; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
-		AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagocheHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* GOCHECollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCHECollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
 		AA5A20972C159D5300C237FA /* Movie+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Constraints.swift"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		AA5A20272C13F44800C237FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AA5A1FE72C13205B00C237FA /* DamagocheHomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */,
-				AA5A1FE82C13205B00C237FA /* DamagocheHomeViewController.swift in Sources */,
 				AA5A218D2C18A1A800C237FA /* TrendMovie.swift in Sources */,
 				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
