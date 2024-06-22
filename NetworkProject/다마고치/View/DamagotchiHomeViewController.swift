@@ -56,14 +56,23 @@ class DamagotchiHomeViewController: UIViewController {
 
 extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        Damagotchi.allInstances.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DamagotchiCollectionViewCell.shared.reuseIdentifier, for: indexPath) as! DamagotchiCollectionViewCell
+        let tamagotchi = Damagotchi.allInstances[indexPath.row]
+        configureCell(cell, with: tamagotchi)
+        return cell
     }
     
-    
+    func configureCell(_ cell: DamagotchiCollectionViewCell, with damagotchi: Damagotchi) {
+        let imageName = damagotchi.imageName ?? "준비중"
+        cell.imageView.image = UIImage(named: imageName)
+        cell.imageView.contentMode = .scaleAspectFit
+        cell.titleLabel.text = damagotchi.title
+        cell.titleLabel.textAlignment = .center
+    }
     
     
 }
