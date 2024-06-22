@@ -92,7 +92,8 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let damagotchi = Damagotchi.allInstances[indexPath.row]
-        showAlert(title: damagotchi.title, message: damagotchi.description)
+            //.//showAlert(title: damagotchi.title, message: damagotchi.description)
+        showCustomAlert(image: UIImage(named: damagotchi.imageName ?? "준비중"), title: damagotchi.title, message: damagotchi.description)
     }
     
     func showAlert(title: String, message: String) {
@@ -100,4 +101,13 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    func showCustomAlert(image: UIImage?, title: String, message: String) {
+            let alertVC = CustomAlertViewController()
+            alertVC.alertImage = image
+            alertVC.alertTitle = title
+            alertVC.alertMessage = message
+            alertVC.modalPresentationStyle = .overCurrentContext
+            alertVC.modalTransitionStyle = .crossDissolve
+            present(alertVC, animated: true, completion: nil)
+        }
 }
