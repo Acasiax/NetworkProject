@@ -103,11 +103,11 @@ class CustomAlertViewController: UIViewController {
     @objc private func startAction() {
         print("클릭")
         let damaMainVC = DamaMainViewController(image: alertImage)
-           if let navigationController = self.navigationController {
-               navigationController.pushViewController(damaMainVC, animated: true)
-           } else {
-               damaMainVC.modalPresentationStyle = .fullScreen
-               self.present(damaMainVC, animated: true, completion: nil)
-           }
-           }
-       }
+        if let navigationController = self.navigationController {
+            navigationController.pushViewController(damaMainVC, animated: true)
+        } else {
+            damaMainVC.modalPresentationStyle = .fullScreen
+            self.present(damaMainVC, animated: true, completion: nil)
+        }
+    }
+}
