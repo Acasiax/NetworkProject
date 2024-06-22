@@ -11,11 +11,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-       
-        guard let _ = (scene as? UIWindowScene) else { return }
-    }
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            
+            window = UIWindow(windowScene: windowScene)
+            window?.rootViewController = createTabBarController()
+            window?.makeKeyAndVisible()
+        }
+
+        func createTabBarController() -> UITabBarController {
+            let tabBarController = UITabBarController()
+            
+            let netfliexVC = UINavigationController(rootViewController: NetfliexHomeViewController())
+            netfliexVC.tabBarItem = UITabBarItem(title: "넷플릭스", image: UIImage(systemName: "house"), tag: 0)
+            
+            let rotaryVC = UINavigationController(rootViewController: RotaryHomeViewController())
+            rotaryVC.tabBarItem = UITabBarItem(title: "로또", image: UIImage(systemName: "arrow.2.circlepath"), tag: 1)
+            
+            let movieVC = UINavigationController(rootViewController: MovieHomeViewController())
+            movieVC.tabBarItem = UITabBarItem(title: "영화", image: UIImage(systemName: "film"), tag: 2)
+            
+            let weatherVC = UINavigationController(rootViewController: WeatherHomeViewController())
+            weatherVC.tabBarItem = UITabBarItem(title: "날씨", image: UIImage(systemName: "cloud.sun"), tag: 3)
+            
+            let trendeVC = UINavigationController(rootViewController: TrendeHomeViewController())
+            trendeVC.tabBarItem = UITabBarItem(title: "트랜드", image: UIImage(systemName: "chart.line.uptrend.xyaxis"), tag: 4)
+            
+            let damagotchiVC = UINavigationController(rootViewController: DamagotchiHomeViewController())
+            damagotchiVC.tabBarItem = UITabBarItem(title: "다마고치", image: UIImage(systemName: "gamecontroller"), tag: 5)
+            
+            tabBarController.viewControllers = [netfliexVC, rotaryVC, movieVC, weatherVC, trendeVC, damagotchiVC]
+            
+            return tabBarController
+        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

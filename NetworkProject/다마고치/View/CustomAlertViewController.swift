@@ -14,7 +14,6 @@ class CustomAlertViewController: UIViewController {
     var alertMessage: String?
     var index: Int?
     
-    
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private let messageLabel = UILabel()
@@ -88,7 +87,7 @@ class CustomAlertViewController: UIViewController {
     }
     
     private func applyLayoutConstraints() {
-        // 이미 정의된 layout constraints 적용
+        
     }
     
     private func configureContent() {
@@ -102,7 +101,16 @@ class CustomAlertViewController: UIViewController {
     }
     
     @objc private func startAction() {
-     
-    }
-}
+        print("클릭")
 
+        let damaMainVC = DamaMainViewController()
+            if let navigationController = self.navigationController {
+                print("푸쉬 대령이요~")
+                navigationController.pushViewController(damaMainVC, animated: true)
+            } else {
+                print("모달 대령이요~")
+                damaMainVC.modalPresentationStyle = .fullScreen
+                self.present(damaMainVC, animated: true, completion: nil)
+            }
+           }
+       }

@@ -57,7 +57,7 @@ class DamagotchiHomeViewController: UIViewController {
     }
     func applyLayoutConstraints() {
         headerLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(3)
             make.centerX.equalTo(view)
         }
         
@@ -101,6 +101,7 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
     func showCustomAlert(image: UIImage?, title: String, message: String) {
             let alertVC = CustomAlertViewController()
             alertVC.alertImage = image
