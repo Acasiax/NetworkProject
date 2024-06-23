@@ -12,58 +12,15 @@ class DamaMainViewController: UIViewController {
     
     let bubbleImageView = UIImageView(image: UIImage(named: "bubble"))
     let tamagotchiImageView = UIImageView(image: UIImage(named: "1-4"))
-    let speechLabel: UILabel = {
-        let label = UILabel()
-        label.text = "복습 아직 안하셨다고요? 지금 잠이 오세요? 대장님??"
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    let levelTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "방실방실 다마고치"
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        return label
-    }()
-    let riceCountLabel: UILabel = {
-        let label = UILabel()
-        label.text = "밥알 0개"
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        return label
-    }()
-    let waterCountLabel: UILabel = {
-        let label = UILabel()
-        label.text = "물방울 0개"
-        label.textAlignment = .center
-        label.numberOfLines = 1
-        return label
-    }()
-    let riceTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "밥주세용"
-        textField.textAlignment = .center
-        return textField
-    }()
-    let waterTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "물주세용"
-        textField.textAlignment = .center
-        return textField
-    }()
-    let riceButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("밥먹기", for: .normal)
-        return button
-    }()
-    let waterButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("물먹기", for: .normal)
-        return button
-    }()
+    let speechLabel = UILabel.createLabel(text: "복습 아직 안하셨다고요? 지금 잠이 오세요? 대장님??", alignment: .center, lines: 0)
+    let levelTitleLabel = UILabel.createLabel(text: "방실방실 다마고치", alignment: .center, lines: 1)
+    let riceCountLabel = UILabel.createLabel(text: "밥알 0개", alignment: .center, lines: 1)
+    let waterCountLabel = UILabel.createLabel(text: "물방울 0개", alignment: .center, lines: 1)
+    let riceTextField = UITextField.createTextField(placeholder: "밥주세용")
+    let waterTextField = UITextField.createTextField(placeholder: "물주세용")
+    let riceButton = UIButton.createButton(title: "밥먹기")
+    let waterButton = UIButton.createButton(title: "물먹기")
+    
     
     init(image: UIImage?) {
         self.tamagotchiImageView.image = image
@@ -229,4 +186,3 @@ class DamaMainViewController: UIViewController {
     }
     
 }
-

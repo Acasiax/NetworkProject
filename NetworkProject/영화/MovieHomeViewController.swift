@@ -74,7 +74,7 @@ class MovieHomeViewController: UIViewController {
                             movieCd: receive.movieCd
                         )
                     }
-                    //🔧
+                   
                     DispatchQueue.main.async {
                         self.dayBoxOffice = tempDayBoxOffice
                         self.tableView.reloadData()

@@ -28,6 +28,7 @@
 		AA5850952C26F839007B92FD /* DamaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850942C26F839007B92FD /* DamaMainViewController.swift */; };
 		AA5850972C26FE3C007B92FD /* TrendyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */; };
 		AA5850992C27D6B6007B92FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850982C27D6B6007B92FD /* DetailViewController.swift */; };
+		AA5850A32C288167007B92FD /* Dama+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850A22C288167007B92FD /* Dama+ext.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
 		AA5A20242C13262D00C237FA /* DamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
@@ -68,6 +69,7 @@
 		AA5850942C26F839007B92FD /* DamaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamaMainViewController.swift; sourceTree = "<group>"; };
 		AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyHomeViewController.swift; sourceTree = "<group>"; };
 		AA5850982C27D6B6007B92FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA5850A22C288167007B92FD /* Dama+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dama+ext.swift"; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				AA5A20292C13F45F00C237FA /* Cell */,
 				AA5A20282C13F45300C237FA /* Model */,
 				AA5A20272C13F44800C237FA /* View */,
+				AA5850A22C288167007B92FD /* Dama+ext.swift */,
 			);
 			name = "다마고치";
 			path = "다마고치";
@@ -384,6 +387,7 @@
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
+				AA5850A32C288167007B92FD /* Dama+ext.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
 				AA5850992C27D6B6007B92FD /* DetailViewController.swift in Sources */,
