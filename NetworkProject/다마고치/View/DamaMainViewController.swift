@@ -76,10 +76,7 @@ class DamaMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
-    
-        
         setUI()
         
         riceButton.addTarget(self, action: #selector(handleRiceButtonTap), for: .touchUpInside)
@@ -105,37 +102,43 @@ class DamaMainViewController: UIViewController {
         return min(10, max(1, Int(level)))
     }
     
-    func getImageNameAndTitle(for level: Int, type: Int) -> (imageName: String, title: String) {
+    func getImageNameAndTitle(for level: Int, type: Int) -> (imageName: String, title: String, speech: String) {
         let imageName: String
         let title: String
+        let speech: String
         
         switch type {
         case 1:
             let damagotchi = Damagotchi.group1[level - 1]
             imageName = damagotchi.imageName ?? ""
             title = damagotchi.title
+            speech = damagotchi.speech
         case 2:
             let damagotchi = Damagotchi.group2[level - 1]
             imageName = damagotchi.imageName ?? ""
             title = damagotchi.title
+            speech = damagotchi.speech
         case 3:
             let damagotchi = Damagotchi.group3[level - 1]
             imageName = damagotchi.imageName ?? ""
             title = damagotchi.title
+            speech = damagotchi.speech
         default:
             imageName = "준비중"
             title = "준비중"
+            speech = "준비중"
         }
         
-        return (imageName, title)
+        return (imageName, title, speech)
     }
     
     func updateUIForNewLevel(riceCount: Int, waterCount: Int, type: Int) {
         let level = calculateLevel(riceCount: riceCount, waterCount: waterCount)
-        let (imageName, title) = getImageNameAndTitle(for: level, type: type)
+        let (imageName, title, speech) = getImageNameAndTitle(for: level, type: type)
         
         tamagotchiImageView.image = UIImage(named: imageName)
         levelTitleLabel.text = title
+        speechLabel.text = speech
         riceCountLabel.text = "밥알 \(riceCount)개"
         waterCountLabel.text = "물방울 \(waterCount)개"
     }
@@ -188,36 +191,37 @@ class DamaMainViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        riceTextField.snp.makeConstraints { make in
-            make.top.equalTo(waterCountLabel.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(40)
-            make.width.equalTo(100)
-            make.height.equalTo(40)
-        }
-        
-        riceButton.snp.makeConstraints { make in
-            make.top.equalTo(riceTextField.snp.bottom).offset(10)
-            make.centerX.equalTo(riceTextField)
-            make.width.equalTo(100)
-            make.height.equalTo(40)
-        }
         
         waterTextField.snp.makeConstraints { make in
             make.top.equalTo(waterCountLabel.snp.bottom).offset(20)
-            make.right.equalToSuperview().offset(-40)
-            make.width.equalTo(100)
+            make.left.equalToSuperview().offset(40)
+            make.width.equalTo(200)
             make.height.equalTo(40)
         }
         
         waterButton.snp.makeConstraints { make in
-            make.top.equalTo(waterTextField.snp.bottom).offset(10)
-            make.centerX.equalTo(waterTextField)
+            make.centerY.equalTo(waterTextField)
+            make.left.equalTo(waterTextField.snp.right).offset(10)
+            make.width.equalTo(100)
+            make.height.equalTo(40)
+        }
+        
+        riceTextField.snp.makeConstraints { make in
+            make.top.equalTo(waterTextField.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(40)
+            make.width.equalTo(200)
+            make.height.equalTo(40)
+        }
+        
+        riceButton.snp.makeConstraints { make in
+            make.centerY.equalTo(riceTextField)
+            make.left.equalTo(riceTextField.snp.right).offset(10)
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
         
         
     }
-
+    
 }
 
