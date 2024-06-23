@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let weatherVC = UINavigationController(rootViewController: WeatherHomeViewController())
             weatherVC.tabBarItem = UITabBarItem(title: "날씨", image: UIImage(systemName: "cloud.sun"), tag: 3)
             
-            let trendeVC = UINavigationController(rootViewController: TrendeHomeViewController())
+            let trendeVC = UINavigationController(rootViewController: TrendyHomeViewController())
             trendeVC.tabBarItem = UITabBarItem(title: "트랜드", image: UIImage(systemName: "chart.line.uptrend.xyaxis"), tag: 4)
             
             let damagotchiVC = UINavigationController(rootViewController: DamagotchiHomeViewController())

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Vk-2D-n2z">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -187,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="1110.6870229007634" y="2195.7746478873241"/>
         </scene>
-        <!--Trende Home View Controller-->
+        <!--Trendy Home View Controller-->
         <scene sceneID="nWX-32-xkA">
             <objects>
-                <viewController id="EsG-I4-wbZ" customClass="TrendeHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EsG-I4-wbZ" customClass="TrendyHomeViewController" customModule="NetworkProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oS-rW-qQq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

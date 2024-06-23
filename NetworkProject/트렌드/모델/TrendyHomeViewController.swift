@@ -17,7 +17,7 @@ struct TrendeModel {
     let image: UIImage
 }
 
-class TrendeHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TrendyHomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private var collectionView: UICollectionView?
 
@@ -28,6 +28,7 @@ class TrendeHomeViewController: UIViewController, UICollectionViewDataSource, UI
         view.backgroundColor = .white
         configureModels()
         configureCollectionView()
+       fetchMovies()
     }
 
     private func configureModels() {
@@ -40,6 +41,62 @@ class TrendeHomeViewController: UIViewController, UICollectionViewDataSource, UI
         models.append(TrendeModel(date: "09/29/2021", genre: "#Crime", rating: 3.3, title: "까꿍2", image: UIImage(named: "더퍼스트슬램덩크")!))
     }
 
+    private func fetchMovies() {
+           let url = "https://api.themoviedb.org/3/movie/popular" // TMDB API 엔드포인트
+           let parameters: Parameters = [
+            "api_key": APIKey.TMDBAPIKey, // API 키 적용
+            "language": "ko-KR", // 원하는 언어 코드
+               "page": 1
+           ]
+
+//           AF.request(url, parameters: parameters).responseJSON { response in
+//               switch response.result {
+//               case .success:
+//                   print(response)
+//                   print("Successfully fetched movies")
+//               case .failure(let error):
+//                   print("Failed to fetch movies: \(error)")
+//               }
+//           }
+//       }
+//    
+        
+        AF.request(url, parameters: parameters).responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [String: Any],
+                       let results = json["results"] as? [[String: Any]] {
+                        self.models.removeAll() // 기존 모델 초기화
+                        for movie in results {
+                            if let title = movie["title"] as? String,
+                               let releaseDate = movie["release_date"] as? String,
+                               let voteAverage = movie["vote_average"] as? Double,
+                               let genreIds = movie["genre_ids"] as? [Int],
+                               let posterPath = movie["poster_path"] as? String {
+                                let genre = genreIds.first.flatMap { "#\($0)" } ?? "#Unknown"
+                                let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
+                                if let data = try? Data(contentsOf: imageUrl!),
+                                   let image = UIImage(data: data) {
+                                    let movieModel = TrendeModel(date: releaseDate, genre: genre, rating: voteAverage, title: title, image: image)
+                                    self.models.append(movieModel)
+                                }
+                            }
+                        }
+                        self.collectionView?.reloadData() // 컬렉션 뷰 업데이트
+                    }
+                    print("Successfully fetched movies")
+                case .failure(let error):
+                    print("Failed to fetch movies: \(error)")
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
     private func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -76,3 +133,4 @@ class TrendeHomeViewController: UIViewController, UICollectionViewDataSource, UI
         return CGSize(width: view.frame.size.width-20, height: 220)
     }
 }
+

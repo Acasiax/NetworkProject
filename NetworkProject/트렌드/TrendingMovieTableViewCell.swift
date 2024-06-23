@@ -84,7 +84,7 @@ class TrendeCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(genreLabel.snp.bottom).offset(5)
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
-            make.height.equalTo(100)
+            make.height.equalTo(130)
         }
         
         ratingLabel.snp.makeConstraints { make in

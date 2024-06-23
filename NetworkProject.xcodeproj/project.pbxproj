@@ -26,7 +26,7 @@
 		AA5850912C26AE8F007B92FD /* DamagotchiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850902C26AE8F007B92FD /* DamagotchiHomeViewController.swift */; };
 		AA5850932C26B881007B92FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850922C26B881007B92FD /* CustomAlertViewController.swift */; };
 		AA5850952C26F839007B92FD /* DamaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850942C26F839007B92FD /* DamaMainViewController.swift */; };
-		AA5850972C26FE3C007B92FD /* TrendeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850962C26FE3C007B92FD /* TrendeHomeViewController.swift */; };
+		AA5850972C26FE3C007B92FD /* TrendyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
 		AA5A20242C13262D00C237FA /* DamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
@@ -66,7 +66,7 @@
 		AA5850902C26AE8F007B92FD /* DamagotchiHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagotchiHomeViewController.swift; sourceTree = "<group>"; };
 		AA5850922C26B881007B92FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		AA5850942C26F839007B92FD /* DamaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamaMainViewController.swift; sourceTree = "<group>"; };
-		AA5850962C26FE3C007B92FD /* TrendeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendeHomeViewController.swift; sourceTree = "<group>"; };
+		AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyHomeViewController.swift; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
@@ -122,7 +122,6 @@
 			children = (
 				AA5A20DF2C187E2F00C237FA /* APIKey.swift */,
 				AA5A21882C189FF200C237FA /* TMDB.swift */,
-				AA5A218C2C18A1A800C237FA /* TrendMovie.swift */,
 				AA5A20E12C187EF000C237FA /* 트렌드 */,
 				AA5A1FE62C131FE900C237FA /* 다마고치 */,
 				AAE209762C11F4F7006310B7 /* 날씨 */,
@@ -255,7 +254,8 @@
 		AA5A217C2C1895AE00C237FA /* TMDB모델 */ = {
 			isa = PBXGroup;
 			children = (
-				AA5850962C26FE3C007B92FD /* TrendeHomeViewController.swift */,
+				AA5A218C2C18A1A800C237FA /* TrendMovie.swift */,
+				AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */,
 			);
 			name = "TMDB모델";
 			path = "모델";
@@ -379,7 +379,7 @@
 				AA5850912C26AE8F007B92FD /* DamagotchiHomeViewController.swift in Sources */,
 				AAE209782C11F51B006310B7 /* WeatherHomeViewController.swift in Sources */,
 				AA5850932C26B881007B92FD /* CustomAlertViewController.swift in Sources */,
-				AA5850972C26FE3C007B92FD /* TrendeHomeViewController.swift in Sources */,
+				AA5850972C26FE3C007B92FD /* TrendyHomeViewController.swift in Sources */,
 				AA5A21892C189FF200C237FA /* TMDB.swift in Sources */,
 				AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */,
 				AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */,
