@@ -29,8 +29,9 @@ class DamagotchiHomeViewController: UIViewController {
         setupCollectionView()
         setupViews()
         applyLayoutConstraints()
+       
     }
-    
+   
     func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self

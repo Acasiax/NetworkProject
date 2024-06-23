@@ -81,6 +81,9 @@ class DamaMainViewController: UIViewController {
         
         riceButton.addTarget(self, action: #selector(handleRiceButtonTap), for: .touchUpInside)
         waterButton.addTarget(self, action: #selector(handleWaterButtonTap), for: .touchUpInside)
+        
+        loadSavedData()
+        
     }
     
     @objc func handleRiceButtonTap() {
@@ -141,8 +144,23 @@ class DamaMainViewController: UIViewController {
         speechLabel.text = speech
         riceCountLabel.text = "밥알 \(riceCount)개"
         waterCountLabel.text = "물방울 \(waterCount)개"
+        
+        // 변경된 이미지와 레이블 텍스트를 UserDefaults에 저장
+        UserDefaults.standard.set(imageName, forKey: "currentImageName")
+        UserDefaults.standard.set(title, forKey: "currentTitle")
+        UserDefaults.standard.set(speech, forKey: "currentSpeech")
     }
     
+    func loadSavedData() {
+           if let imageName = UserDefaults.standard.string(forKey: "currentImageName"),
+              let title = UserDefaults.standard.string(forKey: "currentTitle"),
+              let speech = UserDefaults.standard.string(forKey: "currentSpeech") {
+               tamagotchiImageView.image = UIImage(named: imageName)
+               levelTitleLabel.text = title
+               speechLabel.text = speech
+           }
+       }
+       
     
     func setUI() {
         
