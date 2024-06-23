@@ -28,23 +28,19 @@ class CustomAlertViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            loadSavedData()
-        }
-        
-    private func loadSavedData() {
-            if let imageName = UserDefaults.standard.string(forKey: "currentImageName"),
-               let title = UserDefaults.standard.string(forKey: "currentTitle"),
-               let speech = UserDefaults.standard.string(forKey: "currentSpeech") {
-                alertImage = UIImage(named: imageName)
-                alertTitle = title
-                alertMessage = speech
-            }
-            
-            configureContent()
-        }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//            super.viewWillAppear(animated)
+//            loadSavedData()
+//        }
+//        
+//        private func loadSavedData() {
+//            let imageName = UserDefaults.standard.string(forKey: "currentImageName") ?? "준비중"
+//            alertImage = UIImage(named: imageName)
+//            alertTitle = UserDefaults.standard.string(forKey: "currentTitle") ?? ""
+//            alertMessage = UserDefaults.standard.string(forKey: "currentSpeech") ?? ""
+//            
+//            configureContent()
+//        }
     private func setupViews() {
         view.backgroundColor = UIColor(white: 0, alpha: 0.5)
         

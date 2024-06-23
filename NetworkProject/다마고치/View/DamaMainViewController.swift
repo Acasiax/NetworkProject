@@ -81,9 +81,6 @@ class DamaMainViewController: UIViewController {
         
         riceButton.addTarget(self, action: #selector(handleRiceButtonTap), for: .touchUpInside)
         waterButton.addTarget(self, action: #selector(handleWaterButtonTap), for: .touchUpInside)
-        
-        loadSavedData()
-        
     }
     
     @objc func handleRiceButtonTap() {
@@ -151,16 +148,6 @@ class DamaMainViewController: UIViewController {
         UserDefaults.standard.set(speech, forKey: "currentSpeech")
     }
     
-    func loadSavedData() {
-           if let imageName = UserDefaults.standard.string(forKey: "currentImageName"),
-              let title = UserDefaults.standard.string(forKey: "currentTitle"),
-              let speech = UserDefaults.standard.string(forKey: "currentSpeech") {
-               tamagotchiImageView.image = UIImage(named: imageName)
-               levelTitleLabel.text = title
-               speechLabel.text = speech
-           }
-       }
-       
     
     func setUI() {
         

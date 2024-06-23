@@ -34,10 +34,23 @@ class DetailViewController: UIViewController {
         fetchMovieDetails(for: model.id)
     }
     
+    override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            updateTableHeaderViewLayout() // 🛠️
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           updateTableHeaderViewLayout()
+       }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CastCell.self, forCellReuseIdentifier: "CastCell")
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableView.automaticDimension
+        
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
@@ -80,14 +93,17 @@ class DetailViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-16)
         }
-
-        tableView.tableHeaderView = headerView
         
-        headerView.layoutIfNeeded()
-        let headerSize = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        headerView.frame.size = CGSize(width: headerSize.width, height: headerSize.height)
         tableView.tableHeaderView = headerView
     }
+    
+    private func updateTableHeaderViewLayout() { // 🛠️
+            guard let headerView = tableView.tableHeaderView else { return }
+            headerView.layoutIfNeeded()
+            let headerSize = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            headerView.frame.size = CGSize(width: headerSize.width, height: headerSize.height)
+            tableView.tableHeaderView = headerView
+        }
     
     private func fetchMovieDetails(for movieId: Int) {
         let url = "https://api.themoviedb.org/3/movie/\(movieId)"
@@ -112,20 +128,18 @@ class DetailViewController: UIViewController {
         }
     }
     
+
     private func updateHeaderView(overview: String) {
-        if let headerView = tableView.tableHeaderView {
-            for subview in headerView.subviews {
-                if let label = subview as? UILabel, label.numberOfLines == 3 {
-                    label.text = overview
-                    break
+            if let headerView = tableView.tableHeaderView {
+                for subview in headerView.subviews {
+                    if let label = subview as? UILabel, label.numberOfLines == 3 {
+                        label.text = overview
+                        break
+                    }
                 }
+                updateTableHeaderViewLayout()
             }
-            headerView.layoutIfNeeded()
-            let headerSize = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-            headerView.frame.size = CGSize(width: headerSize.width, height: headerSize.height)
-            tableView.tableHeaderView = headerView
         }
-    }
     
     private func fetchCasting(for movieId: Int) {
         let url = "https://api.themoviedb.org/3/movie/\(movieId)/credits"
