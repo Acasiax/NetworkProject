@@ -29,21 +29,21 @@ class SignupViewController: UIViewController {
     
     
     func setupViewHierarchy() {
-           view.addSubview(titleLabel)
-           view.addSubview(emailTextField)
-           view.addSubview(passwordTextField)
-           view.addSubview(nicknameTextField)
-           view.addSubview(locationTextField)
-           view.addSubview(referralCodeTextField)
-           view.addSubview(signUpButton)
-           view.addSubview(moreInfoButton)
-           view.addSubview(toggleSwitch)
-       }
+        view.addSubview(titleLabel)
+        view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(nicknameTextField)
+        view.addSubview(locationTextField)
+        view.addSubview(referralCodeTextField)
+        view.addSubview(signUpButton)
+        view.addSubview(moreInfoButton)
+        view.addSubview(toggleSwitch)
+    }
     
     func applyConstraints() {
         view.configureSignUpConstraints(titleLabel: titleLabel,
-                                    emailTextField: emailTextField,
-                                    passwordTextField: passwordTextField,
+                                        emailTextField: emailTextField,
+                                        passwordTextField: passwordTextField,
                                         usernameTextField: nicknameTextField,
                                         locationTextField: locationTextField,
                                         referralCodeTextField: referralCodeTextField,

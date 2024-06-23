@@ -167,10 +167,8 @@ class RotaryHomeViewController: UIViewController {
       
       @objc func dismissKeyboard() {
           view.endEditing(true)
-      }
-      
+      }      
 }
-
 
 extension RotaryHomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
