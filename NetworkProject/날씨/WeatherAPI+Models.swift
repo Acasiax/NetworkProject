@@ -27,28 +27,66 @@ class WeatherAPIModels {
         return baseURL?.url
     }
     
-    func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Int?, Any?) -> Void) {
-        guard let url = getURL(latitude: latitude, longitude: longitude) else {
-            print("URL build fail")
-            completion(500, nil)
-            return
-        }
+    
+    //GCD 응용하기
+//    func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Int?, Any?) -> Void) {
+//        guard let url = getURL(latitude: latitude, longitude: longitude) else {
+//            print("URL build fail")
+//            completion(500, nil)
+//            return
+//        }
+//
+//        AF.request(url, method: .get).validate().responseJSON(queue: .global(qos: .background)) { response in
+//            switch response.result {
+//            case .success(let value):
+//                let code = response.response?.statusCode
+//                DispatchQueue.main.async {
+//                    completion(code, value)
+//                }
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//                DispatchQueue.main.async {
+//                    completion(500, nil)
+//                }
+//            }
+//        }
+//    }
+//
+//}
 
-        AF.request(url, method: .get).validate().responseJSON(queue: .global(qos: .background)) { response in
-            switch response.result {
-            case .success(let value):
-                let code = response.response?.statusCode
-                DispatchQueue.main.async {
-                    completion(code, value)
-                }
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-                DispatchQueue.main.async {
-                    completion(500, nil)
+    
+    //DO - Catch문 응용하기
+    func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Int?, Any?) -> Void) {
+            guard let url = getURL(latitude: latitude, longitude: longitude) else {
+                print("URL build fail")
+                completion(500, nil)
+                return
+            }
+
+            DispatchQueue.global(qos: .background).async {
+                do {
+                    let dataRequest = try AF.request(url, method: .get).validate()
+                    dataRequest.responseJSON { response in
+                        DispatchQueue.main.async {
+                            switch response.result {
+                            case .success(let value):
+                                let code = response.response?.statusCode
+                                completion(code, value)
+                                
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                                completion(500, nil)
+                            }
+                        }
+                    }
+                } catch {
+                    print("Request error: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        completion(500, nil)
+                    }
                 }
             }
         }
-    }
 
-}
+    }
