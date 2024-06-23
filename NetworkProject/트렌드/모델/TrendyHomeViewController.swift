@@ -48,53 +48,61 @@ class TrendyHomeViewController: UIViewController, UICollectionViewDataSource, UI
             "language": "ko-KR", // 원하는 언어 코드
                "page": 1
            ]
-
-//           AF.request(url, parameters: parameters).responseJSON { response in
-//               switch response.result {
-//               case .success:
-//                   print(response)
-//                   print("Successfully fetched movies")
-//               case .failure(let error):
-//                   print("Failed to fetch movies: \(error)")
-//               }
-//           }
-//       }
-//    
         
         AF.request(url, parameters: parameters).responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    if let json = value as? [String: Any],
-                       let results = json["results"] as? [[String: Any]] {
-                        self.models.removeAll() // 기존 모델 초기화
-                        for movie in results {
-                            if let title = movie["title"] as? String,
-                               let releaseDate = movie["release_date"] as? String,
-                               let voteAverage = movie["vote_average"] as? Double,
-                               let genreIds = movie["genre_ids"] as? [Int],
-                               let posterPath = movie["poster_path"] as? String {
-                                let genre = genreIds.first.flatMap { "#\($0)" } ?? "#Unknown"
-                                let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
-                                if let data = try? Data(contentsOf: imageUrl!),
-                                   let image = UIImage(data: data) {
-                                    let movieModel = TrendeModel(date: releaseDate, genre: genre, rating: voteAverage, title: title, image: image)
-                                    self.models.append(movieModel)
-                                }
-                            }
-                        }
-                        self.collectionView?.reloadData() // 컬렉션 뷰 업데이트
-                    }
-                    print("Successfully fetched movies")
-                case .failure(let error):
-                    print("Failed to fetch movies: \(error)")
-                }
-            }
-        }
-        
-        
-        
-        
-        
+                  switch response.result {
+                  case .success(let value):
+                      if let json = value as? [String: Any],
+                         let results = json["results"] as? [[String: Any]] {
+                          self.models.removeAll() // 기존 모델 초기화
+                          let group = DispatchGroup()
+                          
+                          for movie in results {
+                              if let title = movie["title"] as? String,
+                                 let releaseDate = movie["release_date"] as? String,
+                                 let voteAverage = movie["vote_average"] as? Double,
+                                 let genreIds = movie["genre_ids"] as? [Int],
+                                 let posterPath = movie["poster_path"] as? String {
+                                  let genre = genreIds.first.flatMap { "#\($0)" } ?? "#Unknown"
+                                  let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")
+                                  
+                                  group.enter()
+                                  self.downloadImage(from: imageUrl) { image in
+                                      if let image = image {
+                                          let movieModel = TrendeModel(date: releaseDate, genre: genre, rating: voteAverage, title: title, image: image)
+                                          self.models.append(movieModel)
+                                      }
+                                      group.leave()
+                                  }
+                              }
+                          }
+                          
+                          group.notify(queue: .main) {
+                              self.collectionView?.reloadData() // 컬렉션 뷰 업데이트
+                          }
+                      }
+                      print("Successfully fetched movies")
+                  case .failure(let error):
+                      print("Failed to fetch movies: \(error)")
+                  }
+              }
+          }
+          
+          private func downloadImage(from url: URL?, completion: @escaping (UIImage?) -> Void) {
+              guard let url = url else {
+                  completion(nil)
+                  return
+              }
+              
+              URLSession.shared.dataTask(with: url) { data, response, error in
+                  if let data = data, let image = UIImage(data: data) {
+                      completion(image)
+                  } else {
+                      completion(nil)
+                  }
+              }.resume()
+          }
+          
         
         
     private func configureCollectionView() {
