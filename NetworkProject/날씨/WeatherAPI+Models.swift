@@ -33,16 +33,22 @@ class WeatherAPIModels {
             completion(500, nil)
             return
         }
-        AF.request(url, method: .get).responseJSON { response in
+
+        AF.request(url, method: .get).validate().responseJSON(queue: .global(qos: .background)) { response in
             switch response.result {
             case .success(let value):
                 let code = response.response?.statusCode
-                completion(code, value)
+                DispatchQueue.main.async {
+                    completion(code, value)
+                }
                 
             case .failure(let error):
                 print(error.localizedDescription)
-                completion(500, nil)
+                DispatchQueue.main.async {
+                    completion(500, nil)
+                }
             }
         }
     }
+
 }
