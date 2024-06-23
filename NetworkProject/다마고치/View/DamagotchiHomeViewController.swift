@@ -29,7 +29,6 @@ class DamagotchiHomeViewController: UIViewController {
         setupCollectionView()
         setupViews()
         applyLayoutConstraints()
-      
     }
     
     func setupCollectionView() {
@@ -44,17 +43,16 @@ class DamagotchiHomeViewController: UIViewController {
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
         collectionView.collectionViewLayout = collectionViewLayout
         collectionView.register(DamagotchiCollectionViewCell.self, forCellWithReuseIdentifier: DamagotchiCollectionViewCell.shared.reuseIdentifier)
-
-       
     }
+    
     func setupViews() {
         view.backgroundColor = .white
         headerLabel.text = "다마고치 선택하기"
         headerLabel.textAlignment = .center
         view.addSubview(headerLabel)
         view.addSubview(collectionView)
-
     }
+    
     func applyLayoutConstraints() {
         headerLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(3)
@@ -71,27 +69,30 @@ class DamagotchiHomeViewController: UIViewController {
 }
 
 extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        Damagotchi.allInstances.count
+        return Damagotchi.getFirstItems().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DamagotchiCollectionViewCell.shared.reuseIdentifier, for: indexPath) as! DamagotchiCollectionViewCell
-        let damagotchi = Damagotchi.createDamagotchis()[indexPath.row]
+        let damagotchi = Damagotchi.getFirstItems()[indexPath.row]
         configureCell(cell, with: damagotchi)
         return cell
     }
     
     func configureCell(_ cell: DamagotchiCollectionViewCell, with damagotchi: Damagotchi) {
-        let imageName = damagotchi.imageName ?? "준비중"
-        cell.imageView.image = UIImage(named: imageName)
-        cell.imageView.contentMode = .scaleAspectFit
+        cell.imageView.image = UIImage(named: damagotchi.imageName ?? "준비중")
         cell.titleLabel.text = damagotchi.title
+        cell.imageView.contentMode = .scaleAspectFit
         cell.titleLabel.textAlignment = .center
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let damagotchi = Damagotchi.createDamagotchis()[indexPath.row]
+        let damagotchi = Damagotchi.getFirstItems()[indexPath.row]
         showCustomAlert(image: UIImage(named: damagotchi.imageName ?? "준비중"), title: damagotchi.title, message: damagotchi.description)
     }
     
@@ -102,12 +103,16 @@ extension DamagotchiHomeViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func showCustomAlert(image: UIImage?, title: String, message: String) {
-            let alertVC = CustomAlertViewController()
-            alertVC.alertImage = image
-            alertVC.alertTitle = title
-            alertVC.alertMessage = message
-            alertVC.modalPresentationStyle = .overCurrentContext
-            alertVC.modalTransitionStyle = .crossDissolve
-            present(alertVC, animated: true, completion: nil)
-        }
+        let alertVC = CustomAlertViewController()
+        alertVC.alertImage = image
+               alertVC.alertTitle = title
+               alertVC.alertMessage = message
+               if let navigationController = self.navigationController {
+                   navigationController.pushViewController(alertVC, animated: true)
+               } else {
+                   alertVC.modalPresentationStyle = .overCurrentContext
+                   alertVC.modalTransitionStyle = .crossDissolve
+                   present(alertVC, animated: true, completion: nil)
+               }
+    }
 }

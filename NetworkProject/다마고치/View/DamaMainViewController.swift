@@ -10,7 +10,6 @@ import SnapKit
 
 class DamaMainViewController: UIViewController {
     
-    // Create UI elements
     let bubbleImageView = UIImageView(image: UIImage(named: "bubble"))
     let tamagotchiImageView = UIImageView(image: UIImage(named: "1-4"))
     let speechLabel: UILabel = {
@@ -20,12 +19,40 @@ class DamaMainViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-    let levelLabel: UILabel = {
+    let levelTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "방실방실 다마고치\nLV1 ・ 밥알 0개 ・ 물방울 0개"
+        label.text = "방실방실 다마고치"
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         return label
+    }()
+    let riceCountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "밥알 0개"
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        return label
+    }()
+    let waterCountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "물방울 0개"
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        return label
+    }()
+    let riceTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "밥주세용"
+        textField.textAlignment = .center
+        return textField
+    }()
+    let waterTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "물주세용"
+        textField.textAlignment = .center
+        return textField
     }()
     let riceButton: UIButton = {
         let button = UIButton(type: .system)
@@ -39,25 +66,94 @@ class DamaMainViewController: UIViewController {
     }()
     
     init(image: UIImage?) {
-            self.tamagotchiImageView.image = image
-            super.init(nibName: nil, bundle: nil)
-        }
+        self.tamagotchiImageView.image = image
+        super.init(nibName: nil, bundle: nil)
+    }
     
     required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+    
+        
+        setUI()
+        
+        riceButton.addTarget(self, action: #selector(handleRiceButtonTap), for: .touchUpInside)
+        waterButton.addTarget(self, action: #selector(handleWaterButtonTap), for: .touchUpInside)
+    }
+    
+    @objc func handleRiceButtonTap() {
+        let riceCount = Int(riceTextField.text ?? "0") ?? 0
+        let waterCount = Int(waterTextField.text ?? "0") ?? 0
+        
+        updateUIForNewLevel(riceCount: riceCount, waterCount: waterCount, type: 2)
+    }
+    
+    @objc func handleWaterButtonTap() {
+        let riceCount = Int(riceTextField.text ?? "0") ?? 0
+        let waterCount = Int(waterTextField.text ?? "0") ?? 0
+        
+        updateUIForNewLevel(riceCount: riceCount, waterCount: waterCount, type: 2)
+    }
+    
+    func calculateLevel(riceCount: Int, waterCount: Int) -> Int {
+        let level = (Double(riceCount) / 5.0) + (Double(waterCount) / 2.0)
+        return min(10, max(1, Int(level)))
+    }
+    
+    func getImageNameAndTitle(for level: Int, type: Int) -> (imageName: String, title: String) {
+        let imageName: String
+        let title: String
+        
+        switch type {
+        case 1:
+            let damagotchi = Damagotchi.group1[level - 1]
+            imageName = damagotchi.imageName ?? ""
+            title = damagotchi.title
+        case 2:
+            let damagotchi = Damagotchi.group2[level - 1]
+            imageName = damagotchi.imageName ?? ""
+            title = damagotchi.title
+        case 3:
+            let damagotchi = Damagotchi.group3[level - 1]
+            imageName = damagotchi.imageName ?? ""
+            title = damagotchi.title
+        default:
+            imageName = "준비중"
+            title = "준비중"
+        }
+        
+        return (imageName, title)
+    }
+    
+    func updateUIForNewLevel(riceCount: Int, waterCount: Int, type: Int) {
+        let level = calculateLevel(riceCount: riceCount, waterCount: waterCount)
+        let (imageName, title) = getImageNameAndTitle(for: level, type: type)
+        
+        tamagotchiImageView.image = UIImage(named: imageName)
+        levelTitleLabel.text = title
+        riceCountLabel.text = "밥알 \(riceCount)개"
+        waterCountLabel.text = "물방울 \(waterCount)개"
+    }
+    
+    
+    func setUI() {
         
         view.addSubview(bubbleImageView)
         view.addSubview(tamagotchiImageView)
         view.addSubview(speechLabel)
-        view.addSubview(levelLabel)
+        view.addSubview(levelTitleLabel)
+        view.addSubview(riceCountLabel)
+        view.addSubview(waterCountLabel)
+        view.addSubview(riceTextField)
         view.addSubview(riceButton)
+        view.addSubview(waterTextField)
         view.addSubview(waterButton)
+        
         
         bubbleImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
@@ -77,23 +173,51 @@ class DamaMainViewController: UIViewController {
             make.width.height.equalTo(100)
         }
         
-        levelLabel.snp.makeConstraints { make in
+        levelTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(tamagotchiImageView.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
         
-        riceButton.snp.makeConstraints { make in
-            make.top.equalTo(levelLabel.snp.bottom).offset(20)
+        riceCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(levelTitleLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        waterCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(riceCountLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        riceTextField.snp.makeConstraints { make in
+            make.top.equalTo(waterCountLabel.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(40)
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
         
-        waterButton.snp.makeConstraints { make in
-            make.top.equalTo(levelLabel.snp.bottom).offset(20)
+        riceButton.snp.makeConstraints { make in
+            make.top.equalTo(riceTextField.snp.bottom).offset(10)
+            make.centerX.equalTo(riceTextField)
+            make.width.equalTo(100)
+            make.height.equalTo(40)
+        }
+        
+        waterTextField.snp.makeConstraints { make in
+            make.top.equalTo(waterCountLabel.snp.bottom).offset(20)
             make.right.equalToSuperview().offset(-40)
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
+        
+        waterButton.snp.makeConstraints { make in
+            make.top.equalTo(waterTextField.snp.bottom).offset(10)
+            make.centerX.equalTo(waterTextField)
+            make.width.equalTo(100)
+            make.height.equalTo(40)
+        }
+        
+        
     }
+
 }
+

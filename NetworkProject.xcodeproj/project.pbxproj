@@ -27,6 +27,7 @@
 		AA5850932C26B881007B92FD /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850922C26B881007B92FD /* CustomAlertViewController.swift */; };
 		AA5850952C26F839007B92FD /* DamaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850942C26F839007B92FD /* DamaMainViewController.swift */; };
 		AA5850972C26FE3C007B92FD /* TrendyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */; };
+		AA5850992C27D6B6007B92FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850982C27D6B6007B92FD /* DetailViewController.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
 		AA5A20242C13262D00C237FA /* DamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
@@ -36,7 +37,6 @@
 		AA5A21852C18995300C237FA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AA5A21842C18995300C237FA /* Kingfisher */; };
 		AA5A21872C189A6100C237FA /* TrendingMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */; };
 		AA5A21892C189FF200C237FA /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A21882C189FF200C237FA /* TMDB.swift */; };
-		AA5A218D2C18A1A800C237FA /* TrendMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A218C2C18A1A800C237FA /* TrendMovie.swift */; };
 		AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */; };
 		AAE2093C2C117CF9006310B7 /* GitIgnoreSetting in Resources */ = {isa = PBXBuildFile; fileRef = AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */; };
 		AAE209702C119A7A006310B7 /* MovieHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */; };
@@ -67,6 +67,7 @@
 		AA5850922C26B881007B92FD /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		AA5850942C26F839007B92FD /* DamaMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamaMainViewController.swift; sourceTree = "<group>"; };
 		AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyHomeViewController.swift; sourceTree = "<group>"; };
+		AA5850982C27D6B6007B92FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		AA5A20DF2C187E2F00C237FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovieTableViewCell.swift; sourceTree = "<group>"; };
 		AA5A21882C189FF200C237FA /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
-		AA5A218C2C18A1A800C237FA /* TrendMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovie.swift; sourceTree = "<group>"; };
 		AAE209392C1177DF006310B7 /* Lotto+Layout+EXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lotto+Layout+EXT.swift"; sourceTree = "<group>"; };
 		AAE2093B2C117CF9006310B7 /* GitIgnoreSetting */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GitIgnoreSetting; sourceTree = "<group>"; };
 		AAE2096F2C119A7A006310B7 /* MovieHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +246,7 @@
 			children = (
 				AA5A217C2C1895AE00C237FA /* TMDB모델 */,
 				AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */,
+				AA5850982C27D6B6007B92FD /* DetailViewController.swift */,
 			);
 			name = "트렌드";
 			path = "트렌드";
@@ -254,7 +255,6 @@
 		AA5A217C2C1895AE00C237FA /* TMDB모델 */ = {
 			isa = PBXGroup;
 			children = (
-				AA5A218C2C18A1A800C237FA /* TrendMovie.swift */,
 				AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */,
 			);
 			name = "TMDB모델";
@@ -386,6 +386,7 @@
 				AA2CFCA12C1093DB00797F03 /* Signup+Constraints.swift in Sources */,
 				AA2CFC982C10684E00797F03 /* AutoLayout+EXT.swift in Sources */,
 				AA2CFCA42C109FC200797F03 /* RotaryHomeViewController.swift in Sources */,
+				AA5850992C27D6B6007B92FD /* DetailViewController.swift in Sources */,
 				AA5A20E02C187E2F00C237FA /* APIKey.swift in Sources */,
 				AA5A21872C189A6100C237FA /* TrendingMovieTableViewCell.swift in Sources */,
 				AA2CFC9A2C10893300797F03 /* SignUpViewController.swift in Sources */,
@@ -398,7 +399,6 @@
 				AA2CFCAE2C113A6400797F03 /* Lotto+EXT.swift in Sources */,
 				AA2CFC962C105DC400797F03 /* AddUIView.swift in Sources */,
 				AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */,
-				AA5A218D2C18A1A800C237FA /* TrendMovie.swift in Sources */,
 				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
 				AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */,

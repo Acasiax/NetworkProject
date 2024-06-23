@@ -7,7 +7,7 @@
 import UIKit
 import SnapKit
 
-class TrendeCollectionViewCell: UICollectionViewCell {
+class TrendyCollectionViewCell: UICollectionViewCell {
     
     static var id = "TrendeCollectionViewCell"
     

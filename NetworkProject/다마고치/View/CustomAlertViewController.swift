@@ -104,8 +104,10 @@ class CustomAlertViewController: UIViewController {
         print("클릭")
         let damaMainVC = DamaMainViewController(image: alertImage)
         if let navigationController = self.navigationController {
+            print("푸쉬대령이요")
             navigationController.pushViewController(damaMainVC, animated: true)
         } else {
+            print("모달 대령이요")
             damaMainVC.modalPresentationStyle = .fullScreen
             self.present(damaMainVC, animated: true, completion: nil)
         }
