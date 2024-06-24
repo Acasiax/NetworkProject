@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
         setupTableHeaderView()
         fetchCasting(for: model.id)
         fetchMovieDetails(for: model.id)
+       
     }
     
     override func viewDidLayoutSubviews() {
@@ -102,10 +103,15 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func imageTapped() {
-        fetchSimilarMovies(for: model.id)
-            let recommendVC = RecommendViewController()
-            navigationController?.pushViewController(recommendVC, animated: true)
+        fetchSimilarAndRecommendedMovies(for: model.id) { similarMovies, recommendedMovies in
+            let baseVC = BaseViewController()
+            baseVC.similarMovies = similarMovies
+            baseVC.recommendedMovies = recommendedMovies
+            self.navigationController?.pushViewController(baseVC, animated: true)
         }
+    }
+
+    
     
     private func updateTableHeaderViewLayout() {
             guard let headerView = tableView.tableHeaderView else { return }
@@ -116,23 +122,60 @@ class DetailViewController: UIViewController {
         }
     
     
-    private func fetchSimilarMovies(for movieId: Int) {
-        let url = TMDB.similarMoviesUrl(for: movieId)
-        
+    private func fetchSimilarAndRecommendedMovies(for movieId: Int, completion: @escaping ([Movie], [Movie]) -> Void) {
+        let dispatchGroup = DispatchGroup()
+        var similarMovies: [Movie] = []
+        var recommendedMovies: [Movie] = []
+
+        dispatchGroup.enter()
+        fetchSimilarMovies(for: movieId) { movies in
+            similarMovies = movies
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.enter()
+        fetchRecommendations(for: movieId) { movies in
+            recommendedMovies = movies
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            completion(similarMovies, recommendedMovies)
+        }
+    }
+
+    
+    private func fetchSimilarMovies(for movieId: Int, completion: @escaping ([Movie]) -> Void) {
+            let url = TMDB.similarMoviesUrl(for: movieId)
+            
+            AF.request(url).responseDecodable(of: SimilarMoviesContainer.self) { response in
+                switch response.result {
+                case .success(let similarMoviesContainer):
+                    completion(similarMoviesContainer.results)
+                case .failure(let error):
+                    print("Failed to fetch similar movies: \(error)")
+                    completion([])
+                }
+            }
+        }
+
+    
+    
+    private func fetchRecommendations(for movieId: Int, completion: @escaping ([Movie]) -> Void) {
+        let url = TMDB.recommendationsUrl(for: movieId)
+
         AF.request(url).responseDecodable(of: SimilarMoviesContainer.self) { response in
             switch response.result {
-            case .success(let similarMoviesContainer):
-                let recommendVC = RecommendViewController()
-                recommendVC.similarMovies = similarMoviesContainer.results
-                self.navigationController?.pushViewController(recommendVC, animated: true)
+            case .success(let recommendationsContainer):
+                completion(recommendationsContainer.results)
             case .failure(let error):
-                print("Failed to fetch similar movies: \(error)")
+                print("Failed to fetch recommendations: \(error)")
+                completion([])
             }
         }
     }
-    
-    
-    
+
+ 
     private func fetchMovieDetails(for movieId: Int) {
         let url = "https://api.themoviedb.org/3/movie/\(movieId)"
         let parameters: Parameters = [
@@ -197,7 +240,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let actor = cast[indexPath.row]
         let imageUrl = URL(string: "https://image.tmdb.org/t/p/w500\(actor.profile_path ?? "")")
         
-        // Download image and configure cell
+     
         downloadImage(from: imageUrl) { image in
             cell.configure(name: actor.name, role: actor.character, image: image)
         }

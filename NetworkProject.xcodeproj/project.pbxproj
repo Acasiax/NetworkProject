@@ -29,7 +29,8 @@
 		AA5850972C26FE3C007B92FD /* TrendyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */; };
 		AA5850992C27D6B6007B92FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850982C27D6B6007B92FD /* DetailViewController.swift */; };
 		AA5850A32C288167007B92FD /* Dama+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850A22C288167007B92FD /* Dama+ext.swift */; };
-		AA5850D12C298BF5007B92FD /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850D02C298BF5007B92FD /* RecommendViewController.swift */; };
+		AA5850D12C298BF5007B92FD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850D02C298BF5007B92FD /* BaseViewController.swift */; };
+		AA5850D42C299A65007B92FD /* RecommendVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5850D32C299A65007B92FD /* RecommendVerticalViewController.swift */; };
 		AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */; };
 		AA5A20242C13262D00C237FA /* DamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */; };
 		AA5A20262C13E82F00C237FA /* DaMaGoChe+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */; };
@@ -71,7 +72,8 @@
 		AA5850962C26FE3C007B92FD /* TrendyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyHomeViewController.swift; sourceTree = "<group>"; };
 		AA5850982C27D6B6007B92FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA5850A22C288167007B92FD /* Dama+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dama+ext.swift"; sourceTree = "<group>"; };
-		AA5850D02C298BF5007B92FD /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		AA5850D02C298BF5007B92FD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AA5850D32C299A65007B92FD /* RecommendVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendVerticalViewController.swift; sourceTree = "<group>"; };
 		AA5A1FE42C129F1900C237FA /* WeatherAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAPI+Models.swift"; sourceTree = "<group>"; };
 		AA5A20232C13262D00C237FA /* DamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA5A20252C13E82F00C237FA /* DaMaGoChe+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaMaGoChe+Model.swift"; sourceTree = "<group>"; };
@@ -208,6 +210,16 @@
 			path = ext;
 			sourceTree = "<group>";
 		};
+		AA5850D22C299A5A007B92FD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				AA5850982C27D6B6007B92FD /* DetailViewController.swift */,
+				AA5850D32C299A65007B92FD /* RecommendVerticalViewController.swift */,
+				AA5850D02C298BF5007B92FD /* BaseViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		AA5A1FE62C131FE900C237FA /* 다마고치 */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,10 +261,9 @@
 		AA5A20E12C187EF000C237FA /* 트렌드 */ = {
 			isa = PBXGroup;
 			children = (
+				AA5850D22C299A5A007B92FD /* New Group */,
 				AA5A217C2C1895AE00C237FA /* TMDB모델 */,
 				AA5A21862C189A6100C237FA /* TrendingMovieTableViewCell.swift */,
-				AA5850982C27D6B6007B92FD /* DetailViewController.swift */,
-				AA5850D02C298BF5007B92FD /* RecommendViewController.swift */,
 			);
 			name = "트렌드";
 			path = "트렌드";
@@ -408,10 +419,11 @@
 				AA5A1FE52C129F1900C237FA /* WeatherAPI+Models.swift in Sources */,
 				AAE209732C119AC5006310B7 /* Movie+Model.swift in Sources */,
 				AA2CFC792C10580900797F03 /* AppDelegate.swift in Sources */,
+				AA5850D42C299A65007B92FD /* RecommendVerticalViewController.swift in Sources */,
 				AAE2093A2C1177DF006310B7 /* Lotto+Layout+EXT.swift in Sources */,
 				AA5A20242C13262D00C237FA /* DamagotchiCollectionViewCell.swift in Sources */,
 				AA2CFC7B2C10580900797F03 /* SceneDelegate.swift in Sources */,
-				AA5850D12C298BF5007B92FD /* RecommendViewController.swift in Sources */,
+				AA5850D12C298BF5007B92FD /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
