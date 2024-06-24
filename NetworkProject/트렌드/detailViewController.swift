@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
-            updateTableHeaderViewLayout() // 🛠️
+            updateTableHeaderViewLayout()
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,10 +94,19 @@ class DetailViewController: UIViewController {
             make.bottom.equalToSuperview().offset(-16)
         }
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+                imageView.isUserInteractionEnabled = true
+                imageView.addGestureRecognizer(tapGestureRecognizer)
+        
         tableView.tableHeaderView = headerView
     }
     
-    private func updateTableHeaderViewLayout() { // 🛠️
+    @objc private func imageTapped() {
+            let recommendVC = RecommendViewController()
+            navigationController?.pushViewController(recommendVC, animated: true)
+        }
+    
+    private func updateTableHeaderViewLayout() {
             guard let headerView = tableView.tableHeaderView else { return }
             headerView.layoutIfNeeded()
             let headerSize = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
