@@ -102,6 +102,7 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func imageTapped() {
+        fetchSimilarMovies(for: model.id)
             let recommendVC = RecommendViewController()
             navigationController?.pushViewController(recommendVC, animated: true)
         }
@@ -113,6 +114,24 @@ class DetailViewController: UIViewController {
             headerView.frame.size = CGSize(width: headerSize.width, height: headerSize.height)
             tableView.tableHeaderView = headerView
         }
+    
+    
+    private func fetchSimilarMovies(for movieId: Int) {
+        let url = TMDB.similarMoviesUrl(for: movieId)
+        
+        AF.request(url).responseDecodable(of: SimilarMoviesContainer.self) { response in
+            switch response.result {
+            case .success(let similarMoviesContainer):
+                let recommendVC = RecommendViewController()
+                recommendVC.similarMovies = similarMoviesContainer.results
+                self.navigationController?.pushViewController(recommendVC, animated: true)
+            case .failure(let error):
+                print("Failed to fetch similar movies: \(error)")
+            }
+        }
+    }
+    
+    
     
     private func fetchMovieDetails(for movieId: Int) {
         let url = "https://api.themoviedb.org/3/movie/\(movieId)"
