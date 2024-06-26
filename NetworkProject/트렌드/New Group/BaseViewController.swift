@@ -112,18 +112,7 @@ class SimilarMovieCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setupConstraints() {
-        imageView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(200)
-        }
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
-        }
-    }
-    
+       
     func configure(with movie: Movie) {
         if let posterPath = movie.poster_path, let url = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)") {
             loadImage(from: url)
@@ -138,5 +127,20 @@ class SimilarMovieCell: UICollectionViewCell {
                 self.imageView.image = image
             }
         }.resume()
+    }
+}
+
+
+extension SimilarMovieCell {
+    
+    private func setupConstraints() {
+        imageView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(200)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }
